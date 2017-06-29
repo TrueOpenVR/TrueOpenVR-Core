@@ -9,14 +9,23 @@ If you need a quaternion, you can calculate from Yaw, Pitch, Roll as follows:
 
 t0, t1, t2, t3, t4, t5, qW, qX, qY, qZ - double.
 >t0 = cos(DegToRad(yaw) * 0.5);
+
 >t1 = sin(DegToRad(yaw) * 0.5);
+
 >t2 = cos(DegToRad(roll) * 0.5);
+
 >t3 = sin(DegToRad(roll) * 0.5);
+
 >t4 = cos(DegToRad(pitch) * 0.5);
+
 >t5 = sin(DegToRad(pitch) * 0.5);
+
 >qW() = t0 * t2 * t4 + t1 * t3 * t5;
+
 >qX() = t0 * t3 * t4 - t1 * t2 * t5;
+
 >qY() = t0 * t2 * t5 + t1 * t3 * t4;
+
 >qZ() = t1 * t2 * t4 - t0 * t3 * t5;
 
 
