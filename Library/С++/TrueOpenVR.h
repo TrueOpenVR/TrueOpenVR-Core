@@ -3,6 +3,7 @@
 
 #include <windef.h>
 
+
 #define TOVR_DLL_A  "TOVR.dll"
 #define TOVR_DLL_W L"TOVR.dll"
 #ifdef UNICODE
@@ -33,7 +34,7 @@ typedef struct _VRInfo
     INT	UserHeight;
 } TVRInfo, *PVRInfo;
 
-typedef struct _Controllers
+typedef struct _Controller
 {
 	double	X;
 	double	Y;
@@ -45,7 +46,7 @@ typedef struct _Controllers
 	BYTE	Trigger;
 	SHORT	ThumbX;
 	SHORT	ThumbY;
-} TControllers, *PControllers;
+} TController, *PController;
 
 //
 // TrueOpenVR APIs
@@ -67,8 +68,8 @@ DWORD WINAPI GetHMDData
 
 DWORD WINAPI GetControllersData
 (
-    __out PControllers* MyController,
-    __out PControllers* MyController2
+    __out PController* MyController,
+    __out PController* MyController2
 );
 
 DWORD WINAPI SetControllerData

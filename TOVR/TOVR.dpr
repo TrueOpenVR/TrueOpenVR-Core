@@ -29,8 +29,8 @@ end;
   TVRInfo = VRInfo;
 
   //Controllers
-  PControllers = ^TControllers;
-  _Controllers = record
+  PController = ^TController;
+  _Controller = record
     X: double;
     Y: double;
     Z: double;
@@ -42,8 +42,8 @@ end;
     ThumbX: smallint;
     ThumbY: smallint;
 end;
-  Controllers = _Controllers;
-  TControllers = Controllers;
+  Controller = _Controller;
+  TController = Controller;
 
 var
   PluginPath: string;
@@ -51,7 +51,7 @@ var
 
   PluginGetInfo: function(out myVRInfo: TVRInfo): DWORD; stdcall;
   PluginGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
-  PluginGetControllersData: function(out myController, myController2: TControllers): DWORD; stdcall;
+  PluginGetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
   PluginSetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
   PluginSetCentering: function (dwIndex: integer): DWORD; stdcall;
 
@@ -111,9 +111,9 @@ begin
   end;
 end;
 
-function GetControllersData(out myController, myController2: TControllers): DWORD; stdcall;
+function GetControllersData(out myController, myController2: TController): DWORD; stdcall;
 var
-  PluginController, PluginController2: TControllers;
+  PluginController, PluginController2: TController;
 begin
   if FileExists(PluginPath) = false then begin Result:=0; Exit; end;
   Result:=PluginGetControllersData(PluginController, PluginController2);

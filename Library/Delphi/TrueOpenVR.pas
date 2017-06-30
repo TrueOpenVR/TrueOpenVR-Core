@@ -46,8 +46,8 @@ end;
   TVRInfo = VRInfo;
 
   //Controllers
-  PControllers = ^TControllers;
-  _Controllers = record
+  PController = ^TController;
+  _Controller = record
     X: double;
     Y: double;
     Z: double;
@@ -59,8 +59,8 @@ end;
     ThumbX: smallint;
     ThumbY: smallint;
 end;
-  Controllers = _Controllers;
-  TControllers = Controllers;
+  Controller = _Controller;
+  TController = Controller;
 
 //
 // TrueOpenVR APIs
@@ -68,7 +68,7 @@ end;
 
 function GetInfo(out myVRInfo: TVRInfo): DWORD; stdcall; external TOVR_DLL;
 function GetHMDData(out myHMD: THMD): DWORD; stdcall; external TOVR_DLL;
-function GetControllersData(out myController, myController2: TControllers): DWORD; stdcall; external TOVR_DLL;
+function GetControllersData(out myController, myController2: TController): DWORD; stdcall; external TOVR_DLL;
 function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall; external TOVR_DLL;
 function SetCentering(dwIndex: integer): DWORD; stdcall; external TOVR_DLL;
 
