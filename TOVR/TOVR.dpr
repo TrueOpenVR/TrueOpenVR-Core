@@ -67,7 +67,7 @@ begin
   if FileExists(Reg.ReadString('Path') + 'TOVR.ini') = false then Exit;
 
   Ini:=TIniFile.Create(Reg.ReadString('Path') + 'TOVR.ini');
-  PluginPath:=Reg.ReadString('Path') + 'Plugins\' + Ini.ReadString('Plugin', 'Path', 'OpenTrackUDP.dll');
+  PluginPath:=Reg.ReadString('Path') + 'Drivers\' + Ini.ReadString('Driver', 'Path', '');
   Ini.Free;
   Reg.Free;
 end;
@@ -88,7 +88,7 @@ begin
     myVRInfo.Scale:=Ini.ReadBool('VRInit', 'Scale', false);
     myVRInfo.UserWidth:=Ini.ReadInteger('VRInit', 'UserWidth', 1280);
     myVRInfo.UserHeight:=Ini.ReadInteger('VRInit', 'UserHeight', 720);
-    PluginPath:=Reg.ReadString('Path') + 'Plugins\' + Ini.ReadString('Plugin', 'Path', 'OpenTrackUDP.dll');
+    PluginPath:=Reg.ReadString('Path') + 'Drivers\' + Ini.ReadString('Driver', 'Path', '');
     Ini.Free;
     Reg.Free;
     Result:=1;
