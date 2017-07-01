@@ -4,7 +4,7 @@ True Open VR - True Open VR это очень простой API, который позволяет получить до
 
 - Для разработки приложений можно импортировать функции напрямую или через [библиотеку](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Library), вы можете посмотреть [демонстрационные приложения](https://github.com/TrueOpenVR/TrueOpenVR-Samples).
 
-- Для разработки плагинов для VR устройства вы можете посмореть [демонстрационные плагины](https://github.com/TrueOpenVR/TrueOpenVR-Plugins).
+- Для разработки драйверов для VR устройств вы можете посмореть [образц драйверов](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
 - Пишите ваши предложение или запрос новой функциональности через "Issue" или почту.
 ## Загрузка
