@@ -1,5 +1,8 @@
 ﻿[![EN](https://user-images.githubusercontent.com/9499881/27683803-659dc988-5cd8-11e7-9c05-0b747e917666.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Library/README.md) [![RU](https://user-images.githubusercontent.com/9499881/27683795-5b0fbac6-5cd8-11e7-929c-057833e01fb1.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Library/README.RU.md)
 # Функции TrueOpenVR
+Все функции импортируются напрямую из библиотеки "TOVR.dll". Путь библиотеки можно получить из реестра. 
+
+
 **GetHMDData** - Получение данных вращения (Yaw, Pitch, Roll) и позиционирования (X, Y, Z) VR шлема. В случае удачного получения возвращает 1, иначе 0. 
 
 Если вам необходим кватернион, то можно рассчитать его из Yaw, Pitch, Roll следующим образом:
