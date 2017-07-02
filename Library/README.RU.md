@@ -14,10 +14,10 @@ t0, t1, t2, t3, t4, t5, qW, qX, qY, qZ - double.
 >t3 = sin(DegToRad(roll) * 0.5);<br>
 >t4 = cos(DegToRad(pitch) * 0.5);<br>
 >t5 = sin(DegToRad(pitch) * 0.5);<br>
->qW() = t0 * t2 * t4 + t1 * t3 * t5;<br>
->qX() = t0 * t3 * t4 - t1 * t2 * t5;<br>
->qY() = t0 * t2 * t5 + t1 * t3 * t4;<br>
->qZ() = t1 * t2 * t4 - t0 * t3 * t5;<br>
+>qW = t0 * t2 * t4 + t1 * t3 * t5;<br>
+>qX = t0 * t3 * t4 - t1 * t2 * t5;<br>
+>qY = t0 * t2 * t5 + t1 * t3 * t4;<br>
+>qZ = t1 * t2 * t4 - t0 * t3 * t5;<br>
 
 
 **GetControllersData** - Получение данных (кнопки, стики, триггеры) о VR контроллере. В случае удачного получения возвращает 1, иначе 0. 
