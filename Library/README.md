@@ -53,3 +53,7 @@ The **"RenderWidth"** and **"RenderHeight"** parameters are responsible for reso
 
 
 The **"Library"** parameter is responsible for the path to the main library with the functions that you need to load to retrieve data.
+
+The **"Drivers"** parameter is responsible for the path to the folder with the drivers.
+
+The **"Driver"** parameter is responsible for the name of the current driver.

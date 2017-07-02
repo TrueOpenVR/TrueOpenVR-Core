@@ -52,8 +52,9 @@ begin
   Reg:=TRegistry.Create;
   Reg.RootKey:=HKEY_CURRENT_USER;
   if Reg.OpenKey('\Software\TrueOpenVR', false) = false then Exit;
-  if FileExists(Reg.ReadString('Driver')) = false then Exit;
-  DriverPath:=Reg.ReadString('Driver');
+  if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) = false then Exit;
+  DriverPath:=Reg.ReadString('Drivers') + Reg.ReadString('Driver');
+  Reg.CloseKey;
   Reg.Free;
 end;
 
