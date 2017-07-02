@@ -33,20 +33,20 @@ It is desirable that the application has two windows, a main window with a game 
 The main window should be launched in the "Borderless Windowed FullScreen" mode, which means a normal window, without borders, with the size of the display resolution.
 
 
-All parameters are in the registry branch "HKEY_CURRENT_USER\Software\TrueOpenVR".
+All parameters are in the registry branch **"HKEY_CURRENT_USER\Software\TrueOpenVR"**.
 
 
-The "ScreenIndex" parameter is responsible for the display number. For example, 1 is the main display, and 2 is the VR helmet.
+The **"ScreenIndex"** parameter is responsible for the display number. For example, 1 is the main display, and 2 is the VR helmet.
 
 
-The "Scale" parameter is responsible for scaling the image. If the parameter is set to "True", then the image with width "UserWidth" and height of "UserHeight" is stretched to the entire display "ScreenIndex".
+The **"Scale"** parameter is responsible for scaling the image. If the parameter is set to "True", then the image with width "UserWidth" and height of "UserHeight" is stretched to the entire display "ScreenIndex".
 If the parameter is set to "False", the image is not scaled and displayed in the center of the window, empty areas of the window have a black background. The parameter is necessary to eliminate blind areas in the VR headset.
 
 
-The "UserWidth" and "UserHeight" parameters are responsible for the size of the image in the window. By default, this is the size of the "ScreenIndex" display, but the user can change it to eliminate blind areas.
+The **"UserWidth"** and **"UserHeight"** parameters are responsible for the size of the image in the window. By default, this is the size of the "ScreenIndex" display, but the user can change it to eliminate blind areas.
 
 
-The "RenderWidth" and "RenderHeight" parameters are responsible for resolution in applications or games. For example, a user lacks a productive computer and reduces the resolution of the game or application to improve performance.
+The **"RenderWidth"** and **"RenderHeight"** parameters are responsible for resolution in applications or games. For example, a user lacks a productive computer and reduces the resolution of the game or application to improve performance.
 
 
-The "Library" parameter is responsible for the path to the main library with the functions that you need to load to retrieve data.
+The **"Library"** parameter is responsible for the path to the main library with the functions that you need to load to retrieve data.

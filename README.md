@@ -6,6 +6,8 @@ True Open VR - True Open VR is an very simple API that allows access to all VR d
 
 - For developing drivers for VR devices, you can see [sample drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
+- Send your fixes, samples or etc.
+
 - Write your proposals or feature request through "Issue" or email.
 ## Download
 >Version for Windows 7, 8.1, 10
