@@ -26,14 +26,6 @@ typedef struct _HMDData
 	double	Roll;
 } THMD, *PHMD;
 
-typedef struct _VRInfo
-{
-    INT	ScreenIndex;
-    BOOL	Scale;
-    INT	UserWidth;
-    INT	UserHeight;
-} TVRInfo, *PVRInfo;
-
 typedef struct _Controller
 {
 	double	X;
@@ -55,11 +47,6 @@ typedef struct _Controller
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-DWORD WINAPI GetInfo
-(
-    __out PVRInfo* myVRInfo
-);
 
 DWORD WINAPI GetHMDData
 (

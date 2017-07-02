@@ -1,7 +1,7 @@
 library TOVR;
 
 uses
-  SysUtils, Classes, Windows, IniFiles, Registry, Dialogs;
+  SysUtils, Classes, Windows, Registry;
 
 type
   //HMD
@@ -16,17 +16,6 @@ type
 end;
   HMD = _HMDData;
   THMD = HMD;
-
-  //VR Init
-  PVRInfo = ^TVRInfo;
-  _VRInfo = record
-    ScreenIndex: integer;
-    Scale: boolean;
-    UserWidth: integer;
-    UserHeight: integer;
-  end;
-  VRInfo = _VRInfo;
-  TVRInfo = VRInfo;
 
   //Controllers
   PController = ^TController;
@@ -46,132 +35,104 @@ end;
   TController = Controller;
 
 var
-  PluginPath: string;
+  DriverPath: string;
   DllHandle: HMODULE;
 
-  PluginGetInfo: function(out myVRInfo: TVRInfo): DWORD; stdcall;
-  PluginGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
-  PluginGetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
-  PluginSetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
-  PluginSetCentering: function (dwIndex: integer): DWORD; stdcall;
+  DriverGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
+  DriverGetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
+  DriverSetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
+  DriverSetCentering: function (dwIndex: integer): DWORD; stdcall;
 
 {$R *.res}
 
-procedure GetPluginPath;
+procedure GetDriverPath;
 var
-  Ini: TIniFile; Reg: TRegistry;
+  Reg: TRegistry;
 begin
   Reg:=TRegistry.Create;
   Reg.RootKey:=HKEY_CURRENT_USER;
   if Reg.OpenKey('\Software\TrueOpenVR', false) = false then Exit;
-  if FileExists(Reg.ReadString('Path') + 'TOVR.ini') = false then Exit;
-
-  Ini:=TIniFile.Create(Reg.ReadString('Path') + 'TOVR.ini');
-  PluginPath:=Reg.ReadString('Path') + 'Drivers\' + Ini.ReadString('Driver', 'Path', '');
-  Ini.Free;
+  if FileExists(Reg.ReadString('Driver')) = false then Exit;
+  DriverPath:=Reg.ReadString('Driver');
   Reg.Free;
-end;
-
-function GetInfo(out myVRInfo: TVRInfo): DWORD; stdcall;
-var
-  Ini: TIniFile; Reg: TRegistry;
-begin
-  if FileExists(PluginPath) then begin
-    Reg:=TRegistry.Create;
-    Reg.RootKey:=HKEY_CURRENT_USER;
-    Result:=0;
-    if Reg.OpenKey('\Software\TrueOpenVR', false) = false then Exit;
-    if FileExists(Reg.ReadString('Path') + 'TOVR.ini') = false then Exit;
-
-    Ini:=TIniFile.Create(Reg.ReadString('Path') + 'TOVR.ini');
-    MyVRInfo.ScreenIndex:=Ini.ReadInteger('VRInit', 'ScreenIndex', 0);
-    myVRInfo.Scale:=Ini.ReadBool('VRInit', 'Scale', false);
-    myVRInfo.UserWidth:=Ini.ReadInteger('VRInit', 'UserWidth', 1280);
-    myVRInfo.UserHeight:=Ini.ReadInteger('VRInit', 'UserHeight', 720);
-    PluginPath:=Reg.ReadString('Path') + 'Drivers\' + Ini.ReadString('Driver', 'Path', '');
-    Ini.Free;
-    Reg.Free;
-    Result:=1;
-  end else Result:=0;
 end;
 
 function GetHMDData(out myHMD: THMD): DWORD; stdcall;
 var
-  PluginHMD: THMD;
+  DriverHMD: THMD;
 begin
-  if FileExists(PluginPath) = false then begin Result:=0; Exit; end;
-  Result:=PluginGetHMDData(PluginHMD);
+  if FileExists(DriverPath) = false then begin Result:=0; Exit; end;
+  Result:=DriverGetHMDData(DriverHMD);
   if Result <> 0 then begin
-    myHMD.X:=PluginHMD.X;
-    myHMD.Y:=PluginHMD.Y;
-    myHMD.Z:=PluginHMD.Z;
-    myHMD.Yaw:=PluginHMD.Yaw;
-    myHMD.Pitch:=PluginHMD.Pitch;
-    myHMD.Roll:=PluginHMD.Roll;
+    myHMD.X:=DriverHMD.X;
+    myHMD.Y:=DriverHMD.Y;
+    myHMD.Z:=DriverHMD.Z;
+    myHMD.Yaw:=DriverHMD.Yaw;
+    myHMD.Pitch:=DriverHMD.Pitch;
+    myHMD.Roll:=DriverHMD.Roll;
   end;
 end;
 
 function GetControllersData(out myController, myController2: TController): DWORD; stdcall;
 var
-  PluginController, PluginController2: TController;
+  DriverController, DriverController2: TController;
 begin
-  if FileExists(PluginPath) = false then begin Result:=0; Exit; end;
-  Result:=PluginGetControllersData(PluginController, PluginController2);
+  if FileExists(DriverPath) = false then begin Result:=0; Exit; end;
+  Result:=DriverGetControllersData(DriverController, DriverController2);
   if Result <> 0 then begin
     //Controller 1
-    myController.X:=PluginController.X;
-    myController.Y:=PluginController.Y;
-    myController.Z:=PluginController.Z;
+    myController.X:=DriverController.X;
+    myController.Y:=DriverController.Y;
+    myController.Z:=DriverController.Z;
 
-    myController.Yaw:=PluginController.Yaw;
-    myController.Pitch:=PluginController.Pitch;
-    myController.Roll:=PluginController.Roll;
+    myController.Yaw:=DriverController.Yaw;
+    myController.Pitch:=DriverController.Pitch;
+    myController.Roll:=DriverController.Roll;
 
-    myController.Buttons:=PluginController.Buttons;
-    myController.Trigger:=PluginController.Trigger;
-    myController.ThumbX:=PluginController.ThumbX;
-    myController.ThumbY:=PluginController.ThumbY;
+    myController.Buttons:=DriverController.Buttons;
+    myController.Trigger:=DriverController.Trigger;
+    myController.ThumbX:=DriverController.ThumbX;
+    myController.ThumbY:=DriverController.ThumbY;
 
     //Controller 2
-    myController2.X:=PluginController2.X;
-    myController2.Y:=PluginController2.Y;
-    myController2.Z:=PluginController2.Z;
+    myController2.X:=DriverController2.X;
+    myController2.Y:=DriverController2.Y;
+    myController2.Z:=DriverController2.Z;
 
-    myController2.Yaw:=PluginController2.Yaw;
-    myController2.Pitch:=PluginController2.Pitch;
-    myController2.Roll:=PluginController2.Roll;
+    myController2.Yaw:=DriverController2.Yaw;
+    myController2.Pitch:=DriverController2.Pitch;
+    myController2.Roll:=DriverController2.Roll;
 
-    myController2.Buttons:=PluginController2.Buttons;
-    myController2.Trigger:=PluginController2.Trigger;
-    myController2.ThumbX:=PluginController2.ThumbX;
-    myController2.ThumbY:=PluginController2.ThumbY;
+    myController2.Buttons:=DriverController2.Buttons;
+    myController2.Trigger:=DriverController2.Trigger;
+    myController2.ThumbX:=DriverController2.ThumbX;
+    myController2.ThumbY:=DriverController2.ThumbY;
   end;
 end;
 
 function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
 begin
-  if FileExists(PluginPath) = false then begin Result:=0; Exit; end;
-  Result:=PluginSetControllerData(dwIndex, MotorSpeed);
+  if FileExists(DriverPath) = false then begin Result:=0; Exit; end;
+  Result:=DriverSetControllerData(dwIndex, MotorSpeed);
 end;
 
 function SetCentering(dwIndex: integer): DWORD; stdcall;
 begin
-  if FileExists(PluginPath) = false then begin Result:=0; Exit; end;
-  Result:=PluginSetCentering(dwIndex);
+  if FileExists(DriverPath) = false then begin Result:=0; Exit; end;
+  Result:=DriverSetCentering(dwIndex);
 end;
 
 exports
-  GetInfo index 1, GetHMDData index 2, SetCentering index 3, GetControllersData index 4, SetControllerData index 5;
+  GetHMDData index 1, GetControllersData index 2, SetControllerData index 3, SetCentering index 4;
 
 begin
-  GetPluginPath;
-  if FileExists(PluginPath) then begin
-    DllHandle:=LoadLibrary(PChar(PluginPath));
-    @PluginGetInfo:=GetProcAddress(DllHandle, 'GetInfo');
-    @PluginGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
-    @PluginGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
-    @PluginSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
-    @PluginSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+  GetDriverPath;
+  if FileExists(DriverPath) then begin
+    DllHandle:=LoadLibrary(PChar(DriverPath));
+    @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
+    @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
+    @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
+    @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
   end;
 end.
  

@@ -34,17 +34,6 @@ end;
   HMD = _HMDData;
   THMD = HMD;
 
-  //VR Init
-  PVRInfo = ^TVRInfo;
-  _VRInfo = record
-    ScreenIndex: integer;
-    Scale: boolean;
-    UserWidth: integer;
-    UserHeight: integer;
-  end;
-  VRInfo = _VRInfo;
-  TVRInfo = VRInfo;
-
   //Controllers
   PController = ^TController;
   _Controller = record
@@ -66,7 +55,6 @@ end;
 // TrueOpenVR APIs
 //
 
-function GetInfo(out myVRInfo: TVRInfo): DWORD; stdcall; external TOVR_DLL;
 function GetHMDData(out myHMD: THMD): DWORD; stdcall; external TOVR_DLL;
 function GetControllersData(out myController, myController2: TController): DWORD; stdcall; external TOVR_DLL;
 function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall; external TOVR_DLL;
