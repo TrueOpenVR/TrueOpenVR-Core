@@ -1,24 +1,9 @@
-{$MINENUMSIZE 4}
-{$ALIGN ON}
-
 unit TrueOpenVR;
 
 interface
 
-
 uses
-  Windows;
-
-const
-  // Current name of the DLL shipped in the same SDK as this header.
-  // The name reflects the current version
-  TOVR_DLL_A  = 'TOVR.dll';
-  TOVR_DLL_W  = 'TOVR.dll';
-  {$IFDEF UNICODE}
-  TOVR_DLL = TOVR_DLL_W;
-  {$ELSE}
-  TOVR_DLL = TOVR_DLL_A;
-  {$ENDIF}
+  Windows, Registry, SysUtils;
 
 type
   //HMD
@@ -51,15 +36,58 @@ end;
   Controller = _Controller;
   TController = Controller;
 
-//
-// TrueOpenVR APIs
-//
+var
+  GetHMDData: function(out myHMD: THMD): DWORD; stdcall;
+  GetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
+  SetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
+  SetCentering: function (dwIndex: integer): DWORD; stdcall;
 
-function GetHMDData(out myHMD: THMD): DWORD; stdcall; external TOVR_DLL;
-function GetControllersData(out myController, myController2: TController): DWORD; stdcall; external TOVR_DLL;
-function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall; external TOVR_DLL;
-function SetCentering(dwIndex: integer): DWORD; stdcall; external TOVR_DLL;
+function TOVR_Init: Boolean;
+procedure TOVR_Free;
 
 implementation
+
+var
+  DllHandle: HMODULE;
+
+function TOVR_Init: Boolean;
+var
+  Reg: TRegistry;
+begin
+  Reg:=TRegistry.Create;
+  Reg.RootKey:=HKEY_CURRENT_USER;
+
+  if Reg.OpenKey('\Software\TrueOpenVR', false) = false then begin
+    Reg.CloseKey;
+    Reg.Free;
+    Result:=false;
+    Exit;
+  end;
+
+  if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) = false then begin
+    Reg.CloseKey;
+    Reg.Free;
+    Result:=false;
+    Exit;
+  end;
+
+  if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) then begin
+    DllHandle:=LoadLibrary(PChar(Reg.ReadString('Drivers') + Reg.ReadString('Driver')));
+    @GetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
+    @GetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
+    @SetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
+    @SetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+    Result:=true;
+  end else
+    Result:=false;
+
+  Reg.CloseKey;
+  Reg.Free;
+end;
+
+procedure TOVR_Free;
+begin
+  FreeLibrary(DllHandle);
+end;
 
 end.
