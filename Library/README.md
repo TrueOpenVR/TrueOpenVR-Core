@@ -35,6 +35,8 @@ Types and parameters of functions can be seen in libraries.
 It is desirable that the application has two windows, a main window with a game or program for the VR display and a second small window located on the desktop of a conventional display (not a VR), with the ability to close the application and possibly some more functions.
 The main window should be launched in the "Borderless Windowed FullScreen" mode, which means a normal window, without borders, with the size of the display resolution.
 
+![](https://user-images.githubusercontent.com/9499881/27838382-5d76aadc-60fb-11e7-9a1c-a312f2dddccc.png)
+
 
 All parameters are in the registry branch **"HKEY_CURRENT_USER\Software\TrueOpenVR"**.
 
