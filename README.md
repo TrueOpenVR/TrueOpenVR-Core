@@ -4,7 +4,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - For developers apps and games: [sample apps](https://github.com/TrueOpenVR/TrueOpenVR-Samples) and [docs](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Library).
 
-- For develoers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
+- For developers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
 - Send your fixes, samples, demos or etc.
 
