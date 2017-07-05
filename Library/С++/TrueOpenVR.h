@@ -45,29 +45,29 @@ typedef struct _Controller
 //
 
 #ifdef __cplusplus
-extern "C" {
+extern "C" __declspec(dllimport) {
 #endif
 
-DWORD WINAPI GetHMDData
+DWORD _stdcall GetHMDData
 (
-    __out PHMD* myHMD
+    __out THMD* myHMD
 );
 
-DWORD WINAPI GetControllersData
+DWORD _stdcall GetControllersData
 (
-    __out PController* MyController,
-    __out PController* MyController2
+    __out TController* myController,
+    __out TController* myController2
 );
 
-DWORD WINAPI SetControllerData
+DWORD _stdcall SetControllerData
 (
-    __in INT	dxIndex,	
+    __in INT	dwIndex,	
     __in DWORD	MotorSpeed	
 );
 
-DWORD WINAPI SetCentering
+DWORD _stdcall SetCentering
 (
-    __in INT	dxIndex	
+    __in INT	dwIndex	
 );
 
 
