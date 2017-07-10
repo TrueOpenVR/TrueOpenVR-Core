@@ -47,22 +47,34 @@ var
 
 function GetHMDData(out myHMD: THMD): DWORD; stdcall;
 begin
-  Result:=DriverGetHMDData(myHMD);
+  if DllHandle <> 0 then
+    Result:=DriverGetHMDData(myHMD)
+  else
+    Result:=0;
 end;
 
 function GetControllersData(out myController, myController2: TController): DWORD; stdcall;
 begin
-  Result:=DriverGetControllersData(myController, myController2);
+  if DllHandle <> 0 then
+    Result:=DriverGetControllersData(myController, myController2)
+  else
+    Result:=0;
 end;
 
 function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
 begin
-  Result:=DriverSetControllerData(dwIndex, MotorSpeed);
+  if DllHandle <> 0 then
+    Result:=DriverSetControllerData(dwIndex, MotorSpeed)
+  else
+    Result:=0;
 end;
 
 function SetCentering(dwIndex: integer): DWORD; stdcall;
 begin
-  Result:=DriverSetCentering(dwIndex);
+  if DllHandle <> 0 then
+    Result:=DriverSetCentering(dwIndex)
+  else
+    Result:=0;
 end;
 
 procedure GetDriverPath;
