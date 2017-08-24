@@ -83,12 +83,13 @@ var
 begin
   Reg:=TRegistry.Create;
   Reg.RootKey:=HKEY_CURRENT_USER;
-  if Reg.OpenKey('\Software\TrueOpenVR', false) = false then
-    Reg.CloseKey
-  else begin
+  if Reg.OpenKey('\Software\TrueOpenVR', false) = true then begin
     if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) then
-    DriverPath:=Reg.ReadString('Drivers') + Reg.ReadString('Driver');
+      DriverPath:=Reg.ReadString('Drivers') + Reg.ReadString('Driver')
+    else
+     DriverPath:='';
   end;
+  Reg.CloseKey;
   Reg.Free;
 end;
 
@@ -97,7 +98,7 @@ exports
 
 begin
   GetDriverPath;
-  if FileExists(DriverPath) then begin
+  if DriverPath <> '' then begin
     DllHandle:=LoadLibrary(PChar(DriverPath));
     @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
     @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
