@@ -93,17 +93,31 @@ begin
   Reg.Free;
 end;
 
+procedure DllMain(Reason: integer);
+begin
+  case Reason of
+    DLL_PROCESS_ATTACH:
+      begin
+        GetDriverPath;
+        if DriverPath <> '' then begin
+          DllHandle:=LoadLibrary(PChar(DriverPath));
+          @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
+          @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
+          @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
+          @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+        end;
+      end;
+
+    DLL_PROCESS_DETACH:
+      FreeLibrary(DllHandle);
+  end;
+end;
+
 exports
   GetHMDData index 1, GetControllersData index 2, SetControllerData index 3, SetCentering index 4;
 
 begin
-  GetDriverPath;
-  if DriverPath <> '' then begin
-    DllHandle:=LoadLibrary(PChar(DriverPath));
-    @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
-    @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
-    @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
-    @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
-  end;
+  DllProc:=@DllMain;
+  DllProc(DLL_PROCESS_ATTACH);
 end.
  
