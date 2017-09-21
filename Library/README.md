@@ -18,7 +18,7 @@ t0, t1, t2, t3, t4, t5, qW, qX, qY, qZ - double.
 >qX = t0 * t3 * t4 - t1 * t2 * t5;<br>
 >qY = t0 * t2 * t5 + t1 * t3 * t4;<br>
 >qZ = t1 * t2 * t4 - t0 * t3 * t5;<br>
-
+qW, qX, qY, qZ - quaternion.<br>
 
 **GetControllersData** - Receiving data (buttons, sticks, triggers) about the VR controller. In case of successful reception, returns 1, otherwise 0.
 
@@ -48,6 +48,9 @@ The **"Scale"** parameter is responsible for scaling the image. If the parameter
 If the parameter is set to "False", the image is not scaled and displayed in the center of the window, empty areas of the window have a black background. The parameter is necessary to eliminate blind areas in the VR headset.
 
 
+The **"FOV"** parameter is responsible for the field of vision seen by the eye.
+
+
 The **"UserWidth"** and **"UserHeight"** parameters are responsible for the size of the image in the window. By default, this is the size of the "ScreenIndex" display, but the user can change it to eliminate blind areas.
 
 
@@ -56,6 +59,8 @@ The **"RenderWidth"** and **"RenderHeight"** parameters are responsible for reso
 
 The **"Library"** parameter is responsible for the path to the main library with the functions that you need to load to retrieve data.
 
+
 The **"Drivers"** parameter is responsible for the path to the folder with the drivers.
+
 
 The **"Driver"** parameter is responsible for the name of the current driver.
