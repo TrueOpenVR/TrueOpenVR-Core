@@ -6,9 +6,11 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - For developers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
-- Send your fixes, samples, demos or etc.
+- Send your fixes, patches, samples, demos or etc.
 
 - Write your proposals or feature requests through "Issue" or email.
+
+- Become the developer of the standard.
 
 ## Download
 >Version for Windows 7, 8.1, 10
