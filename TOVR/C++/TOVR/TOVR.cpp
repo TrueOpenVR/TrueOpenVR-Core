@@ -67,19 +67,21 @@ void DriverAttach() {
 	}
 	key.Close();
 
-	CString _driversPath(driversPath);
-	CString _driverName(driverName);
+	if (status == ERROR_SUCCESS) {
+		CString _driversPath(driversPath);
+		CString _driverName(driverName);
 
-	if (PathFileExists(_driversPath + _driverName)) {
+		if (PathFileExists(_driversPath + _driverName)) {
 
-		hDll = LoadLibrary(_driversPath + _driverName);
+			hDll = LoadLibrary(_driversPath + _driverName);
 
-		if (hDll != NULL) {
+			if (hDll != NULL) {
 
-			DriverGetHMDData = (_GetHMDData)GetProcAddress(hDll, "GetHMDData");
-			DriverGetControllersData = (_GetControllersData)GetProcAddress(hDll, "GetControllersData");
-			DriverSetControllerData = (_SetControllerData)GetProcAddress(hDll, "SetControllerData");
-			DriverSetCentering = (_SetCentering)GetProcAddress(hDll, "SetCentering");
+				DriverGetHMDData = (_GetHMDData)GetProcAddress(hDll, "GetHMDData");
+				DriverGetControllersData = (_GetControllersData)GetProcAddress(hDll, "GetControllersData");
+				DriverSetControllerData = (_SetControllerData)GetProcAddress(hDll, "SetControllerData");
+				DriverSetCentering = (_SetCentering)GetProcAddress(hDll, "SetCentering");
+			}
 		}
 	}
 }
@@ -88,9 +90,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 {
 	switch (ul_reason_for_call)
 	{
-	case DLL_PROCESS_ATTACH: { 
-			//DriverAttach(); 
-	}
+	case DLL_PROCESS_ATTACH: //DriverAttach(); 
 
 	case DLL_PROCESS_DETACH: {
 		if (hDll != NULL) {
