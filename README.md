@@ -12,6 +12,26 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - Become the developer of the standard.
 
+## Standard features:
+- Easy to use and configure.
+
+- No binding to any platform.
+
+- Support for self-made VR devices.
+
+- Truly open and free standard, published under the GPLv3 license.
+
+## Future plans:
+- Turn on and off the VR of the helmet display, when opening and closing the TOVR application (optional).
+
+- Create a fast VR player, VR-photo viewer and VR game demo.
+
+- Support for VR helmets (Oculus DK1, DK2, CV1, HTC Vive, OSVR HDK and etc).
+
+- Tracker support (Aruco Paper, Point tracker and etc) for self-made VR helmet.
+
+- Support controllers (Razer Hydra, Oculus, HTC Vive, Nolo, Daydream, Gear), and the development and support of a "paper" controller (webcam + Aruco markers + Arduino or webcam + Aruco marker + Daydream).
+
 ## Download
 >Version for Windows 7, 8.1, 10
 
