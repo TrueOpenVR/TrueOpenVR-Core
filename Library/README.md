@@ -42,7 +42,7 @@ The main window should be launched in the "Borderless Windowed FullScreen" mode,
 All parameters are in the registry branch **"HKEY_CURRENT_USER\Software\TrueOpenVR"**.
 
 
-The **"ScreenIndex"** parameter is responsible for the display number. For example, 1 is the main display, and 2 is the VR helmet.
+The **"ScreenIndex"** parameter is responsible for the display number. For example, 1 is the main display, and 2 is the VR headset.
 
 
 The **"Scale"** parameter is responsible for scaling the image. If the parameter is set to "True", then the image with width "UserWidth" and height of "UserHeight" is stretched to the entire display "ScreenIndex".
