@@ -26,11 +26,11 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - Create a fast VR player, VR-photo viewer and VR game demo.
 
-- Support VR headsets (Oculus DK1, DK2, CV1, HTC Vive, OSVR HDK and etc).
+- Support VR headsets (Oculus DK1, DK2, CV1, PS VR, HTC Vive, OSVR HDK and etc).
 
 - Trackers support (Aruco Paper, Point tracker and etc) for DIY VR headset.
 
-- Support controllers (Razer Hydra, Oculus, HTC Vive, Nolo, Daydream, Gear), and the development and support of a "paper" controller (webcam + Aruco markers + Arduino or webcam + Aruco marker + Daydream).
+- Support controllers (Razer Hydra, PS Move, Oculus, HTC Vive, Nolo, Daydream, Gear), and the development and support of a "paper" controller (webcam + Aruco markers + Arduino or webcam + Aruco marker + Daydream).
 
 ## Download
 >Version for Windows 7, 8.1, 10
