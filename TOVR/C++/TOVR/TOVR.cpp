@@ -46,7 +46,6 @@ DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in DWORD	MotorSp
 DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex);
 
 HMODULE hDll;
-bool Init = false;
 
 void DriverAttach() {
 	CRegKey key;
@@ -90,29 +89,27 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 {
 	switch (ul_reason_for_call)
 	{
-	case DLL_PROCESS_ATTACH: //DriverAttach(); 
+	case DLL_PROCESS_ATTACH: {
+		DriverAttach();
+		break;
+	}
 
 	case DLL_PROCESS_DETACH: {
 		if (hDll != NULL) {
 			FreeLibrary(hDll);
 			hDll = nullptr;
 		}
+		break;
 	}
 
 	//case DLL_THREAD_ATTACH: 
 	//case DLL_THREAD_DETACH:
-	break;
 	}
 	return TRUE;
 }
 
 DLLEXPORT DWORD __stdcall GetHMDData(__out THMD* myHMD)
 {
-	
-	if (Init == false) { //Temporary solution, DllMain is not called
-		Init = true;
-		DriverAttach();
-	}
 
 	if (hDll != NULL) {
 		return DriverGetHMDData(myHMD);
