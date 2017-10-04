@@ -28,7 +28,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 - Support for DIY VR devices.
 
 ## Future plans:
-- Turn on and off the VR of the headset display, when opening and closing the TOVR application (optional).
+- Turn on and off VR headset display, when opening and closing the TOVR application (optional).
 
 - Create a fast VR player, VR photo viewer and VR game demo.
 
