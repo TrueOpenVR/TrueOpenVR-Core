@@ -36,6 +36,8 @@ end;
 
 var
   DriverPath: string;
+  ScreenIndex: integer;
+  ScreenControl: boolean;
   DllHandle: HMODULE;
 
   DriverGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
@@ -77,7 +79,43 @@ begin
     Result:=0;
 end;
 
-procedure GetDriverPath;
+const
+  EDD_GET_DEVICE_INTERFACE_NAME = 1;
+  ENUM_REGISTRY_SETTINGS = DWORD(-2);
+
+procedure ScreenEnable(dwIndex: integer);
+var
+  Display: TDisplayDevice;
+  DevMode: TDevMode;
+begin
+  Display.cb:=SizeOf(TDisplayDevice);
+  EnumDisplayDevices(nil, dwIndex, Display, EDD_GET_DEVICE_INTERFACE_NAME);
+  EnumDisplaySettings(PChar(@Display.DeviceName[0]), ENUM_REGISTRY_SETTINGS, DevMode);
+  DevMode.dmFields:=DM_BITSPERPEL or DM_PELSWIDTH or DM_PELSHEIGHT or DM_DISPLAYFREQUENCY or DM_DISPLAYFLAGS or DM_POSITION;
+  if (Display.StateFlags and DISPLAY_DEVICE_PRIMARY_DEVICE) <> DISPLAY_DEVICE_PRIMARY_DEVICE then begin
+    ChangeDisplaySettingsEx(PChar(@Display.DeviceName[0]), DevMode, 0, CDS_UPDATEREGISTRY or CDS_NORESET, nil);
+    ChangeDisplaySettingsEx(nil, PDevMode(nil)^, 0, 0, nil);
+  end;
+end;
+
+procedure ScreenDisable(dwIndex: integer);
+var
+  Display: TDisplayDevice;
+  DevMode: TDevMode;
+begin
+  Display.cb:=SizeOf(TDisplayDevice);
+  EnumDisplayDevices(nil, dwIndex, Display, EDD_GET_DEVICE_INTERFACE_NAME);
+  ZeroMemory(@DevMode, SizeOf(TDevMode));
+  DevMode.dmSize:=SizeOf(TDevMode);
+  DevMode.dmBitsPerPel:=32;
+  DevMode.dmFields:=DM_BITSPERPEL or DM_PELSWIDTH or DM_PELSHEIGHT or DM_DISPLAYFREQUENCY or DM_DISPLAYFLAGS or DM_POSITION;
+  if (Display.StateFlags and DISPLAY_DEVICE_PRIMARY_DEVICE) <> DISPLAY_DEVICE_PRIMARY_DEVICE then begin
+    ChangeDisplaySettingsEx(PChar(@Display.DeviceName[0]), DevMode, 0, CDS_UPDATEREGISTRY or CDS_NORESET, nil);
+    ChangeDisplaySettingsEx(nil, PDevMode(nil)^, 0, 0, nil);
+  end;
+end;
+
+procedure GetRegValues;
 var
   Reg: TRegistry;
 begin
@@ -87,7 +125,9 @@ begin
     if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) then
       DriverPath:=Reg.ReadString('Drivers') + Reg.ReadString('Driver')
     else
-     DriverPath:='';
+      DriverPath:='';
+    ScreenIndex:=Reg.ReadInteger('ScreenIndex') - 1;
+    ScreenControl:=Reg.ReadBool('ScreenControl');
   end;
   Reg.CloseKey;
   Reg.Free;
@@ -98,18 +138,24 @@ begin
   case Reason of
     DLL_PROCESS_ATTACH:
       begin
-        GetDriverPath;
+        GetRegValues;
         if DriverPath <> '' then begin
           DllHandle:=LoadLibrary(PChar(DriverPath));
           @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
           @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
           @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
           @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+          if (ScreenControl) and (ScreenIndex <> 0) then
+            ScreenEnable(ScreenIndex);
         end;
       end;
 
     DLL_PROCESS_DETACH:
-      FreeLibrary(DllHandle);
+      if DllHandle <> 0 then begin
+        FreeLibrary(DllHandle);
+        if (ScreenControl) and (ScreenIndex <> 0) then
+          ScreenDisable(ScreenIndex);
+      end;
   end;
 end;
 

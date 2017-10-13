@@ -51,6 +51,9 @@ All parameters are in the registry branch **"HKEY_CURRENT_USER\Software\TrueOpen
 The **"ScreenIndex"** parameter is responsible for the display number. For example, 1 is the main display, and 2 is the VR headset.
 
 
+The **"ScreenControl"** parameter is responsible for the auto enable and disable VR display. Enable option - 1, disable - 0.
+
+
 The **"Scale"** parameter is responsible for scaling the image. If the parameter is set to "True", then the image with width "UserWidth" and height of "UserHeight" is stretched to the entire display "ScreenIndex".
 If the parameter is set to "False", the image is not scaled and displayed in the center of the window, empty areas of the window have a black background. The parameter is necessary to eliminate blind areas in the VR headset.
 
