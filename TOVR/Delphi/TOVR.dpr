@@ -145,7 +145,7 @@ begin
           @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
           @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
           @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
-          if (ScreenControl) and (ScreenIndex <> 0) then
+          if (ScreenControl) then
             ScreenEnable(ScreenIndex);
         end;
       end;
@@ -153,7 +153,7 @@ begin
     DLL_PROCESS_DETACH:
       if DllHandle <> 0 then begin
         FreeLibrary(DllHandle);
-        if (ScreenControl) and (ScreenIndex <> 0) then
+        if (ScreenControl) then
           ScreenDisable(ScreenIndex);
       end;
   end;
