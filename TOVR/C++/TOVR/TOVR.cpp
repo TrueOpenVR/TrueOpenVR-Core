@@ -30,7 +30,7 @@ typedef struct _Controller
 	SHORT	ThumbY;
 } TController, *PController;
 
-typedef DWORD(_stdcall *_GetHMDData)(__out THMD* myHMD);
+typedef DWORD(__stdcall *_GetHMDData)(__out THMD* myHMD);
 typedef DWORD(__stdcall *_GetControllersData)(__out TController* MyController, __out TController* MyController2);
 typedef DWORD(__stdcall *_SetControllerData)(__in INT	dwIndex, __in DWORD	MotorSpeed);
 typedef DWORD(__stdcall *_SetCentering)(__in int dwIndex);
@@ -49,30 +49,30 @@ HMODULE hDll;
 
 void DriverAttach() {
 	CRegKey key;
-	TCHAR driversPath[MAX_PATH];
-	TCHAR driverName[MAX_PATH];
+	TCHAR _driversPath[MAX_PATH];
+	TCHAR _driverName[MAX_PATH];
 
 	LONG status = key.Open(HKEY_CURRENT_USER, _T("Software\\TrueOpenVR"));
 	if (status == ERROR_SUCCESS)
 	{
-		ULONG regSize = sizeof(driverName);
-		status = key.QueryStringValue(_T("Driver"), driverName, &regSize);
+		ULONG regSize = sizeof(_driverName);
+		status = key.QueryStringValue(_T("Driver"), _driverName, &regSize);
 
 		if (status == ERROR_SUCCESS)
 		{
-			regSize = sizeof(driversPath);
-			status = key.QueryStringValue(_T("Drivers"), driversPath, &regSize);
+			regSize = sizeof(_driversPath);
+			status = key.QueryStringValue(_T("Drivers"), _driversPath, &regSize);
 		}
 	}
 	key.Close();
 
 	if (status == ERROR_SUCCESS) {
-		CString _driversPath(driversPath);
-		CString _driverName(driverName);
+		CString driversPath(_driversPath); 
+		CString driverName(_driverName);
 
-		if (PathFileExists(_driversPath + _driverName)) {
+		if (PathFileExists(driversPath + driverName)) {
 
-			hDll = LoadLibrary(_driversPath + _driverName);
+			hDll = LoadLibrary(driversPath + driverName);
 
 			if (hDll != NULL) {
 
@@ -89,21 +89,18 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 {
 	switch (ul_reason_for_call)
 	{
-	case DLL_PROCESS_ATTACH: {
-		DriverAttach();
-		break;
-	}
-
-	case DLL_PROCESS_DETACH: {
-		if (hDll != NULL) {
-			FreeLibrary(hDll);
-			hDll = nullptr;
+		case DLL_PROCESS_ATTACH: {
+			DriverAttach();
+			break;
 		}
-		break;
-	}
 
-	//case DLL_THREAD_ATTACH: 
-	//case DLL_THREAD_DETACH:
+		case DLL_PROCESS_DETACH: {
+			if (hDll != NULL) {
+				FreeLibrary(hDll);
+				hDll = nullptr;
+			}
+			break;
+		}
 	}
 	return TRUE;
 }
