@@ -1,15 +1,27 @@
 ﻿# GetHMDData
 Получение состояния вращения (Yaw, Pitch, Roll) и позиционирования (X, Y, Z) шлема.
 
+С++
 ```c
 DWORD __stdcall GetHMDData(
 	__out THMD *myHMD);
 ```
 
-### Џараметры
+Delphi
+```pascal
+function GetHMDData(
+out myHMD: THMD
+): DWORD;
+```
+
+#### Возвращаемое значение
+Если шлем подключенен и функция успешно завершилась, возвращаемое значение равно 1, иначе 0.
+
+#### Параметры
 myHMD [out] - Указатель на структуру THMD, которая получает текущее состояние шлема.
 
-### Структура THMD
+#### Структура THMD
+C++
 ```c
 typedef struct _HMDData
 {
@@ -20,6 +32,21 @@ typedef struct _HMDData
 	double	Pitch;
 	double	Roll;
 } THMD, *PHMD;
+```
+
+Delphi
+```pascal
+  PHMD = ^THMD;
+  _HMDData = record
+    X: double;
+    Y: double;
+    Z: double;
+    Yaw: double;
+    Pitch: double;
+    Roll: double;
+end;
+  HMD = _HMDData;
+  THMD = HMD;
 ```
 
 Если вам удобнее использовать кватернион, его можно получить из Yaw, Pitch, Roll.
