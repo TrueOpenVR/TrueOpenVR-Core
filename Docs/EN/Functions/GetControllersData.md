@@ -65,6 +65,7 @@ end;
 
 #### Buttons
 Bitmask of the buttons controllers. A set bit indicates that the corresponding button is pressed. 
+
 | Button | 	Bitmask |
 | ------------- | ------------- |
 | GRIP | 0x0001  |
