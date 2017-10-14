@@ -1,5 +1,5 @@
 ﻿# GetHMDData
-Получение состояния вращения (Yaw, Pitch, Roll) и позиционирования (X, Y, Z) шлема.
+Retrieves the rotation (Yaw, Pitch, Roll) and position (X, Y, Z) state of headset.
 
 С++
 ```c
@@ -15,10 +15,10 @@ function GetHMDData(
 ): DWORD;
 ```
 
-#### Параметры
-myHMD [out] - Указатель на структуру THMD, которая получает текущее состояние шлема.
+#### Parameters
+myHMD [out] - Pointer to an THMD structure that receives the state of headset.
 
-#### Структура THMD
+#### Structure THMD
 C++
 ```c
 typedef struct _HMDData
@@ -47,7 +47,7 @@ HMD = _HMDData;
 THMD = HMD;
 ```
 
-Если вам удобнее использовать кватернион, его можно получить из Yaw, Pitch, Roll.
+If you prefer to use a quaternion, you can get it from Yaw, Pitch, Roll.
 ```c
 double qW, qX, qY, qZ;
 qW = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
@@ -56,5 +56,5 @@ qY = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) 
 qZ = sin(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) - cos(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
 ```
 
-#### Возвращаемое значение
-Если шлем подключен и функция успешно завершилась, возвращаемое значение равно 1, иначе 0.
+#### Return value
+If the headset is connected and the function succeeded, the return value is 1, otherwise 0.
