@@ -1,5 +1,5 @@
 ﻿# SetCentering
-Centering the device (reset rotation).
+Centering the device (reset rotation and position).
 
 С++
 ```c
@@ -16,7 +16,7 @@ function SetCentering(
 ```
 
 #### Parameters
-dwIndex - Device number, 1 - headset, 2 and 3 - the first and second controllers.
+dwIndex - Device number, 0 - headset, 1 and 2 - the first and second controllers.
 
 #### Return value
 If the function succeeded, the return value is 1, otherwise 0.

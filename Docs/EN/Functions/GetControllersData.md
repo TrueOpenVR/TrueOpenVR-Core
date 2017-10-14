@@ -1,5 +1,5 @@
 ﻿# GetControllersData
-Retrieves the state of the buttons, sticks and triggers of the two controllers.
+Retrieves the state of the position, rotation, buttons, sticks and triggers of the two controllers.
 
 С++
 ```c
@@ -15,9 +15,6 @@ function GetControllersData(
 	out myController, myController2: TController
 ): DWORD;
 ```
-
-#### Return value
-If the controllers are connected and the function succeeded, the return value is 1, otherwise 0.
 
 #### Parameters
 MyController [out] - Pointer to an TController structure that receives the state of first controller.
@@ -57,3 +54,23 @@ _Controller = record
     ThumbY: smallint;
 end;
 ```
+
+| Type | Description | Values |
+| ------------- | ------------- | ------------- |
+| X, Y, Z | Position tracking | Between -1.0000 and 1.0000 |
+| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 |
+| Trigger | Analog trigger | Between 0 and 255 |
+| ThumbX | Thumbstick x-axis | Between -32768 and 32767 |
+| ThumbX | Thumbstick y-axis | Between -32768 and 32767 |
+
+#### Buttons
+Bitmask of the buttons controllers. A set bit indicates that the corresponding button is pressed. 
+| Button | 	Bitmask |
+| ------------- | ------------- |
+| GRIP | 0x0001  |
+| THUMBSTICK | 0x0002 |
+| MENU | 0x0004 |
+| SYSTEM | 0x0008 |
+
+#### Return value
+If the controllers are connected and the function succeeded, the return value is 1, otherwise 0.

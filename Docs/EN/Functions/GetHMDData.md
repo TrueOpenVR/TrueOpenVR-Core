@@ -1,5 +1,5 @@
 ﻿# GetHMDData
-Retrieves the rotation (Yaw, Pitch, Roll) and position (X, Y, Z) state of headset.
+Retrieves the rotation and position state of headset.
 
 С++
 ```c
@@ -46,6 +46,11 @@ end;
 HMD = _HMDData;
 THMD = HMD;
 ```
+
+| Type | Description | Values |
+| ------------- | ------------- | ------------- |
+| X, Y, Z | Position tracking | Between -1.0000 and 1.0000 |
+| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 |
 
 If you prefer to use a quaternion, you can get it from Yaw, Pitch, Roll.
 ```c
