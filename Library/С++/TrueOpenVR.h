@@ -50,13 +50,13 @@ extern "C" __declspec(dllimport) {
 
 DWORD _stdcall GetHMDData
 (
-    __out THMD* myHMD
+    __out THMD *myHMD
 );
 
 DWORD _stdcall GetControllersData
 (
-    __out TController* myController,
-    __out TController* myController2
+    __out TController *myController,
+    __out TController *myController2
 );
 
 DWORD _stdcall SetControllerData

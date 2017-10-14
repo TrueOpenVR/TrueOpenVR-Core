@@ -30,8 +30,8 @@ typedef struct _Controller
 	SHORT	ThumbY;
 } TController, *PController;
 
-typedef DWORD(__stdcall *_GetHMDData)(__out THMD* myHMD);
-typedef DWORD(__stdcall *_GetControllersData)(__out TController* MyController, __out TController* MyController2);
+typedef DWORD(__stdcall *_GetHMDData)(__out THMD *myHMD);
+typedef DWORD(__stdcall *_GetControllersData)(__out TController *MyController, __out TController *MyController2);
 typedef DWORD(__stdcall *_SetControllerData)(__in INT	dwIndex, __in DWORD	MotorSpeed);
 typedef DWORD(__stdcall *_SetCentering)(__in int dwIndex);
 
@@ -40,8 +40,8 @@ _GetControllersData DriverGetControllersData;
 _SetControllerData DriverSetControllerData;
 _SetCentering DriverSetCentering;
 
-DLLEXPORT DWORD __stdcall GetHMDData(__out THMD* myHMD);
-DLLEXPORT DWORD __stdcall GetControllersData(__out TController* MyController, __out TController* MyController2);
+DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD);
+DLLEXPORT DWORD __stdcall GetControllersData(__out TController *MyController, __out TController *MyController2);
 DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in DWORD	MotorSpeed);
 DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex);
 
@@ -149,7 +149,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	return TRUE;
 }
 
-DLLEXPORT DWORD __stdcall GetHMDData(__out THMD* myHMD)
+DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD)
 {
 
 	if (hDll != NULL) {
@@ -160,7 +160,7 @@ DLLEXPORT DWORD __stdcall GetHMDData(__out THMD* myHMD)
 	}
 }
 
-DLLEXPORT DWORD __stdcall GetControllersData(__out TController* myController, __out TController* myController2)
+DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __out TController *myController2)
 {
 	if (hDll != NULL) {
 		return DriverGetControllersData(myController, myController2);
