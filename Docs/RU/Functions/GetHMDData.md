@@ -1,15 +1,15 @@
 # GetHMDData
-Получение состояния вращения (Yaw, Pitch, Roll) и позиционирования (X, Y, Z) шлема.
+Џолучение состояния вращения (Yaw, Pitch, Roll) и позиционирования (X, Y, Z) шлема.
 
 ```c
 DWORD __stdcall GetHMDData(
 	__out THMD *myHMD);
 ```
 
-### Параметры
-myHMD [out] - Указатель на структуру THMD, которая получает текущее состояние шлема.
+### Џараметры
+myHMD [out] - “казатель на структуру THMD, которая получает текущее состояние шлема.
 
-### Структура THMD
+### ‘труктура THMD
 ```c
 typedef struct _HMDData
 {
@@ -22,7 +22,7 @@ typedef struct _HMDData
 } THMD, *PHMD;
 ```
 
-Если вам удобнее использовать кватернион, его можно получить из Yaw, Pitch, Roll.
+…сли вам удобнее использовать кватернион, его можно получить из Yaw, Pitch, Roll.
 ```c
 double qW, qX, qY, qZ;
 qW = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
