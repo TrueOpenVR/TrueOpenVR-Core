@@ -39,7 +39,7 @@ end;
 var
   GetHMDData: function(out myHMD: THMD): DWORD; stdcall;
   GetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
-  SetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
+  SetControllerData: function (dwIndex: integer; MotorSpeed: word): DWORD; stdcall;
   SetCentering: function (dwIndex: integer): DWORD; stdcall;
 
 function TOVR_Init: Boolean;

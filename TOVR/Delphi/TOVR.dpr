@@ -42,7 +42,7 @@ var
 
   DriverGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
   DriverGetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
-  DriverSetControllerData: function (dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
+  DriverSetControllerData: function (dwIndex: integer; MotorSpeed: word): DWORD; stdcall;
   DriverSetCentering: function (dwIndex: integer): DWORD; stdcall;
 
 {$R *.res}
@@ -63,7 +63,7 @@ begin
     Result:=0;
 end;
 
-function SetControllerData(dwIndex: integer; MotorSpeed: dword): DWORD; stdcall;
+function SetControllerData(dwIndex: integer; MotorSpeed: word): DWORD; stdcall;
 begin
   if DllHandle <> 0 then
     Result:=DriverSetControllerData(dwIndex, MotorSpeed)

@@ -62,7 +62,7 @@ DWORD _stdcall GetControllersData
 DWORD _stdcall SetControllerData
 (
     __in INT	dwIndex,	
-    __in DWORD	MotorSpeed	
+    __in WORD	MotorSpeed	
 );
 
 DWORD _stdcall SetCentering

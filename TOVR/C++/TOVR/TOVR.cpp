@@ -32,7 +32,7 @@ typedef struct _Controller
 
 typedef DWORD(__stdcall *_GetHMDData)(__out THMD *myHMD);
 typedef DWORD(__stdcall *_GetControllersData)(__out TController *MyController, __out TController *MyController2);
-typedef DWORD(__stdcall *_SetControllerData)(__in INT	dwIndex, __in DWORD	MotorSpeed);
+typedef DWORD(__stdcall *_SetControllerData)(__in INT	dwIndex, __in WORD	MotorSpeed);
 typedef DWORD(__stdcall *_SetCentering)(__in int dwIndex);
 
 _GetHMDData DriverGetHMDData;
@@ -42,7 +42,7 @@ _SetCentering DriverSetCentering;
 
 DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD);
 DLLEXPORT DWORD __stdcall GetControllersData(__out TController *MyController, __out TController *MyController2);
-DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in DWORD	MotorSpeed);
+DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in WORD	MotorSpeed);
 DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex);
 
 HMODULE hDll;
@@ -170,7 +170,7 @@ DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __
 	}
 }
 
-DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in DWORD	MotorSpeed)
+DLLEXPORT DWORD __stdcall SetControllerData(__in INT dwIndex, __in WORD MotorSpeed)
 {
 	if (hDll != NULL) {
 		return DriverSetControllerData(dwIndex, MotorSpeed);
