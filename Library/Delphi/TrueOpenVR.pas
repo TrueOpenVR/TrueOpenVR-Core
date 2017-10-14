@@ -28,7 +28,7 @@ end;
     Yaw: double;
     Pitch: double;
     Roll: double;
-    Buttons: dword;
+    Buttons: word;
     Trigger: byte;
     ThumbX: smallint;
     ThumbY: smallint;

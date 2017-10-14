@@ -34,7 +34,7 @@ typedef struct _Controller
 	double	Yaw;
 	double	Pitch;
 	double	Roll;
-	DWORD	Buttons;
+	WORD	Buttons;
 	BYTE	Trigger;
 	SHORT	ThumbX;
 	SHORT	ThumbY;
