@@ -13,7 +13,7 @@
 | [GetHMDData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Functions/GetHMDData.md) | Получение состояния вращения и позиции шлема. |
 | [GetControllersData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Functions/GetControllersData.md) | Получение состояния позиции, вращения, кнопок, стиков и триггеров двух контроллеров. |
 | [SetControllerData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Functions/SetControllerData.md) | Отправка данных контролеру. Функция используется для активации обратной отдачи (вибрации) на контроллерах. |
-| [SetCentering](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Functions/SetCentering.md) | Центрирование устройства (сброс вращения и позиции). |
+| [SetCentering](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Functions/SetCentering.md) | Центрирование устройства (сброс вращения). |
 
 
 # Параметры TrueOpenVR

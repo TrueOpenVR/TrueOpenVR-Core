@@ -57,7 +57,7 @@ end;
 
 | Type | Description | Values |
 | ------------- | ------------- | ------------- |
-| X, Y, Z | Position tracking | Between -1.0000 and 1.0000 |
+| X, Y, Z | Position tracking | Between -1.000 and 1.000 |
 | Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 |
 | Trigger | Analog trigger | Between 0 and 255 |
 | ThumbX | Thumbstick x-axis | Between -32768 and 32767 |

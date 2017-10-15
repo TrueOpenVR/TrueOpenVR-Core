@@ -13,7 +13,7 @@ All functions are imported directly from the "TOVR.dll" library. The library pat
 | [GetHMDData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/GetHMDData.md) | Retrieves the rotation and position state of headset. |
 | [GetControllersData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/GetControllersData.md) | Retrieves the state of the position, rotation, buttons, sticks and triggers of the two controllers. |
 | [SetControllerData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/SetControllerData.md) | Sends data to a controller. Function is used to activate the feedback (vibration) of a controllers. |
-| [SetCentering](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/SetCentering.md) | Centering the device (reset rotation and position). |
+| [SetCentering](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/SetCentering.md) | Centering the device (reset rotation). |
 
 # Parameters TrueOpenVR
 It is desirable that the application has two windows, a main window with a game or program for the VR display and a second small window located on the desktop of a conventional display (not a VR), with the ability to close the application and possibly some more functions.

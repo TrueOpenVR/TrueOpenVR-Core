@@ -1,5 +1,5 @@
 ﻿# SetCentering
-Centering the device (reset rotation and position).
+Centering the device (reset rotation).
 
 С++
 ```c
