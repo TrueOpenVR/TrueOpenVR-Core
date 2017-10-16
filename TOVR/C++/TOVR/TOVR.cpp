@@ -56,10 +56,10 @@ void ScreenEnable(int dwIndex)
 
 	Display.cb = sizeof(DISPLAY_DEVICE);
 	EnumDisplayDevices(NULL, dwIndex, &Display, EDD_GET_DEVICE_INTERFACE_NAME);
-	EnumDisplaySettings((LPCSTR)Display.DeviceName, ENUM_REGISTRY_SETTINGS, &DevMode);
+	EnumDisplaySettings((LPCTSTR)Display.DeviceName, ENUM_REGISTRY_SETTINGS, &DevMode);
 	DevMode.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT | DM_DISPLAYFREQUENCY | DM_DISPLAYFLAGS | DM_POSITION;
 	if (!(Display.StateFlags & DISPLAY_DEVICE_PRIMARY_DEVICE)) {
-		ChangeDisplaySettingsEx((LPCSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
+		ChangeDisplaySettingsEx((LPCTSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
 		ChangeDisplaySettingsEx(NULL, NULL, NULL, NULL, NULL);
 	}
 }
@@ -77,7 +77,7 @@ void ScreenDisable(int dwIndex)
 	DevMode.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT | DM_DISPLAYFREQUENCY | DM_DISPLAYFLAGS | DM_POSITION;
 	EnumDisplayDevices(NULL, dwIndex, &Display, EDD_GET_DEVICE_INTERFACE_NAME);
 	if (!(Display.StateFlags & DISPLAY_DEVICE_PRIMARY_DEVICE)) {
-		ChangeDisplaySettingsEx((LPCSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
+		ChangeDisplaySettingsEx((LPCTSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
 		ChangeDisplaySettingsEx(NULL, NULL, NULL, NULL, NULL);
 	}
 }

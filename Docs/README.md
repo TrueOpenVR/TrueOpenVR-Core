@@ -26,12 +26,13 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 
 | Name  | Description |
 | ------------- | ------------- |
-| `Library`  | The path to the main library with functions. |
+| `Library` | The path to the main 32-bit library with functions. |
+| `Library64` | The path to the main 64-bit library  with functions. |
 | `ScreenIndex`  | VR screen index. For example, 1 is the main display, and 2 is the VR display.  |
-| `Scale`  | Scaling an image. If the value contains 1, the image with the long "RenderWidth" and the height of "RenderHeight" is stretched to "UserWidth" and "UserHeight". If the value contains 0, the image is not scaled and displayed in the center of the window. Empty areas of the window have a black background.  |
+| `Scale` | Scaling an image. If the value contains 1, the image with the long "RenderWidth" and the height of "RenderHeight" is stretched to "UserWidth" and "UserHeight". If the value contains 0, the image is not scaled and displayed in the center of the window. Empty areas of the window have a black background. |
 | `UserWidth` and `UserHeight` | The size image in the window. By default, this is the size of the "ScreenIndex" display, but the user can change it to eliminate blind areas in the VR headset. |
-| `RenderWidth` and `RenderHeight`  | Resolution of the render area. For example, a user lacks a productive computer and reduces the resolution of the game to improve performance.  |
+| `RenderWidth` and `RenderHeight` | Resolution of the render area. For example, a user lacks a productive computer and reduces the resolution of the game to improve performance.  |
 | `FOV` | Field of view. |
-| `Driver` | Current driver name.  |
-| `Drivers`  | Path to the folder with drivers.  |
-| `ScreenControl`  | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
+| `Driver` | Current driver name. |
+| `Drivers` | Path to the folder with drivers. |
+| `ScreenControl` | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
