@@ -64,7 +64,7 @@ begin
     Exit;
   end;
 
-  if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) = false then begin
+  if (Reg.ReadString('Driver') <> '') and (FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) = false) then begin
     Reg.CloseKey;
     Reg.Free;
     Result:=false;

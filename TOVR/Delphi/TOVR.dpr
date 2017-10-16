@@ -13,7 +13,7 @@ type
     Yaw: double;
     Pitch: double;
     Roll: double;
-end;
+  end;
   HMD = _HMDData;
   THMD = HMD;
 
@@ -30,7 +30,7 @@ end;
     Trigger: byte;
     ThumbX: smallint;
     ThumbY: smallint;
-end;
+  end;
   Controller = _Controller;
   TController = Controller;
 
@@ -122,7 +122,7 @@ begin
   Reg:=TRegistry.Create;
   Reg.RootKey:=HKEY_CURRENT_USER;
   if Reg.OpenKey('\Software\TrueOpenVR', false) = true then begin
-    if FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver')) then
+    if (Reg.ReadString('Driver') <> '') and (FileExists(Reg.ReadString('Drivers') + Reg.ReadString('Driver'))) then
       DriverPath:=Reg.ReadString('Drivers') + Reg.ReadString('Driver')
     else
       DriverPath:='';

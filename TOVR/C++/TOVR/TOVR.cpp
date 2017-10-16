@@ -91,7 +91,12 @@ void Init() {
 	if (status == ERROR_SUCCESS)
 	{
 		ULONG regSize = sizeof(_driverName);
-		status = key.QueryStringValue(_T("Driver"), _driverName, &regSize);
+		
+		#ifdef _WIN64
+			status = key.QueryStringValue(_T("Driver64"), _driverName, &regSize);
+		#else
+			status = key.QueryStringValue(_T("Driver"), _driverName, &regSize);
+		#endif
 
 		if (status == ERROR_SUCCESS)
 		{
@@ -109,7 +114,7 @@ void Init() {
 		CString driversPath(_driversPath); 
 		CString driverName(_driverName);
 
-		if (PathFileExists(driversPath + driverName)) {
+		if (driverName != "" && PathFileExists(driversPath + driverName)) {
 
 			hDll = LoadLibrary(driversPath + driverName);
 
@@ -151,7 +156,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 
 DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD)
 {
-
 	if (hDll != NULL) {
 		return DriverGetHMDData(myHMD);
 	}

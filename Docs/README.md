@@ -34,5 +34,6 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 | `RenderWidth` and `RenderHeight` | Resolution of the render area. For example, a user lacks a productive computer and reduces the resolution of the game to improve performance.  |
 | `FOV` | Field of view. |
 | `Driver` | Current driver name. |
+| `Driver64` | Current 64-bit driver name. |
 | `Drivers` | Path to the folder with drivers. |
 | `ScreenControl` | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
