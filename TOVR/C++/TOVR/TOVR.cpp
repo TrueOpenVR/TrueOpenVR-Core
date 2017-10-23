@@ -1,7 +1,8 @@
+//============ True Open Virtual Reality ============
+//========== https://github.com/TrueOpenVR ==========
+
 #include "stdafx.h"
-#include <windows.h>
-#include <atlbase.h>
-#include "Shlwapi.h"
+//#include <Windows.h>
 #include <atlstr.h>  
 
 #define DLLEXPORT extern "C" __declspec(dllexport)
@@ -31,8 +32,8 @@ typedef struct _Controller
 } TController, *PController;
 
 typedef DWORD(__stdcall *_GetHMDData)(__out THMD *myHMD);
-typedef DWORD(__stdcall *_GetControllersData)(__out TController *MyController, __out TController *MyController2);
-typedef DWORD(__stdcall *_SetControllerData)(__in INT	dwIndex, __in WORD	MotorSpeed);
+typedef DWORD(__stdcall *_GetControllersData)(__out TController *myController, __out TController *myController2);
+typedef DWORD(__stdcall *_SetControllerData)(__in int dwIndex, __in WORD MotorSpeed);
 typedef DWORD(__stdcall *_SetCentering)(__in int dwIndex);
 
 _GetHMDData DriverGetHMDData;
@@ -41,46 +42,11 @@ _SetControllerData DriverSetControllerData;
 _SetCentering DriverSetCentering;
 
 DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD);
-DLLEXPORT DWORD __stdcall GetControllersData(__out TController *MyController, __out TController *MyController2);
-DLLEXPORT DWORD __stdcall SetControllerData(__in INT	dwIndex, __in WORD	MotorSpeed);
+DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __out TController *myController2);
+DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpeed);
 DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex);
 
 HMODULE hDll;
-DWORD ScreenIndex;
-DWORD ScreenControl;
-
-void ScreenEnable(int dwIndex)
-{
-	DISPLAY_DEVICE Display;
-	DEVMODE DevMode;
-
-	Display.cb = sizeof(DISPLAY_DEVICE);
-	EnumDisplayDevices(NULL, dwIndex, &Display, EDD_GET_DEVICE_INTERFACE_NAME);
-	EnumDisplaySettings((LPCTSTR)Display.DeviceName, ENUM_REGISTRY_SETTINGS, &DevMode);
-	DevMode.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT | DM_DISPLAYFREQUENCY | DM_DISPLAYFLAGS | DM_POSITION;
-	if (!(Display.StateFlags & DISPLAY_DEVICE_PRIMARY_DEVICE)) {
-		ChangeDisplaySettingsEx((LPCTSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
-		ChangeDisplaySettingsEx(NULL, NULL, NULL, NULL, NULL);
-	}
-}
-
-
-void ScreenDisable(int dwIndex)
-{
-	DISPLAY_DEVICE Display;
-	DEVMODE DevMode;
-	ZeroMemory(&DevMode, sizeof(DEVMODE));
-	
-	Display.cb = sizeof(DISPLAY_DEVICE);
-	DevMode.dmSize = sizeof(DEVMODE);
-	DevMode.dmBitsPerPel = 32;
-	DevMode.dmFields = DM_BITSPERPEL | DM_PELSWIDTH | DM_PELSHEIGHT | DM_DISPLAYFREQUENCY | DM_DISPLAYFLAGS | DM_POSITION;
-	EnumDisplayDevices(NULL, dwIndex, &Display, EDD_GET_DEVICE_INTERFACE_NAME);
-	if (!(Display.StateFlags & DISPLAY_DEVICE_PRIMARY_DEVICE)) {
-		ChangeDisplaySettingsEx((LPCTSTR)Display.DeviceName, &DevMode, 0, CDS_UPDATEREGISTRY | CDS_NORESET, NULL);
-		ChangeDisplaySettingsEx(NULL, NULL, NULL, NULL, NULL);
-	}
-}
 
 void Init() {
 	CRegKey key;
@@ -103,10 +69,6 @@ void Init() {
 			regSize = sizeof(_driversPath);
 			status = key.QueryStringValue(_T("Drivers"), _driversPath, &regSize);
 		}
-
-		key.QueryDWORDValue(_T("ScreenControl"), ScreenControl);
-		key.QueryDWORDValue(_T("ScreenIndex"), ScreenIndex);
-		ScreenIndex -= 1;
 	}
 	key.Close();
 
@@ -124,9 +86,6 @@ void Init() {
 				DriverGetControllersData = (_GetControllersData)GetProcAddress(hDll, "GetControllersData");
 				DriverSetControllerData = (_SetControllerData)GetProcAddress(hDll, "SetControllerData");
 				DriverSetCentering = (_SetCentering)GetProcAddress(hDll, "SetCentering");
-
-				if (ScreenControl == TRUE)
-					ScreenEnable(ScreenIndex);
 			}
 		}
 	}
@@ -145,8 +104,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 			if (hDll != NULL) {
 				FreeLibrary(hDll);
 				hDll = nullptr;
-				if (ScreenControl == TRUE)
-					ScreenDisable(ScreenIndex);
 			}
 			break;
 		}
@@ -174,7 +131,7 @@ DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __
 	}
 }
 
-DLLEXPORT DWORD __stdcall SetControllerData(__in INT dwIndex, __in WORD MotorSpeed)
+DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpeed)
 {
 	if (hDll != NULL) {
 		return DriverSetControllerData(dwIndex, MotorSpeed);
