@@ -68,10 +68,10 @@ Bitmask of the buttons controllers. A set bit indicates that the corresponding b
 
 | Button | 	Bitmask |
 | ------------- | ------------- |
-| GRIP | 0x0001  |
-| THUMBSTICK | 0x0002 |
-| MENU | 0x0004 |
-| SYSTEM | 0x0008 |
+| GRIPBTN | 0x0001  |
+| THUMBSTICKBTN | 0x0002 |
+| MENUBTN | 0x0004 |
+| SYSTEMBTN | 0x0008 |
 
 #### Return value
 If the controllers are connected and the function succeeded, the return value is 1, otherwise 0.
