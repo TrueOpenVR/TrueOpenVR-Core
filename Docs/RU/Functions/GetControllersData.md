@@ -3,7 +3,7 @@
 
 С++
 ```c
-DWORD __stdcall GetControllersData(
+DWORD GetControllersData(
 	__out TController *MyController,
 	__out TController *MyController2
 );

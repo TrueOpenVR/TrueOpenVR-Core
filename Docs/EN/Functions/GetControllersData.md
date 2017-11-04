@@ -3,7 +3,7 @@ Retrieves the state of the position, rotation, buttons, sticks and triggers of t
 
 С++
 ```c
-DWORD __stdcall GetControllersData(
+DWORD GetControllersData(
 	__out TController *MyController,
 	__out TController *MyController2
 );
