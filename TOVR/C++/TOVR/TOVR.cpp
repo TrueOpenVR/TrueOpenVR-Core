@@ -2,8 +2,8 @@
 //========== https://github.com/TrueOpenVR ==========
 
 #include "stdafx.h"
+#include <atlstr.h> 
 //#include <Windows.h>
-#include <atlstr.h>  
 
 #define DLLEXPORT extern "C" __declspec(dllexport)
 
@@ -40,11 +40,6 @@ _GetHMDData DriverGetHMDData;
 _GetControllersData DriverGetControllersData;
 _SetControllerData DriverSetControllerData;
 _SetCentering DriverSetCentering;
-
-DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD);
-DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __out TController *myController2);
-DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpeed);
-DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex);
 
 HMODULE hDll;
 
@@ -86,6 +81,10 @@ void Init() {
 				DriverGetControllersData = (_GetControllersData)GetProcAddress(hDll, "GetControllersData");
 				DriverSetControllerData = (_SetControllerData)GetProcAddress(hDll, "SetControllerData");
 				DriverSetCentering = (_SetCentering)GetProcAddress(hDll, "SetCentering");
+
+				if (DriverGetHMDData == NULL || DriverGetControllersData == NULL || DriverSetControllerData == NULL || DriverSetCentering == NULL)
+					hDll = NULL;
+
 			}
 		}
 	}
@@ -108,7 +107,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 			break;
 		}
 	}
-	return TRUE;
+	return true;
 }
 
 DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD)

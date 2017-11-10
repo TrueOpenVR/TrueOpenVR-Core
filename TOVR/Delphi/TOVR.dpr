@@ -7,7 +7,6 @@ uses
   SysUtils, Windows, Registry;
 
 type
-  //HMD
   PHMD = ^THMD;
   _HMDData = record
     X: double;
@@ -20,7 +19,6 @@ type
   HMD = _HMDData;
   THMD = HMD;
 
-  //Controllers
   PController = ^TController;
   _Controller = record
     X: double;
@@ -110,6 +108,9 @@ begin
           @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
           @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
           @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+
+          if (addr(DriverGetHMDData) = nil) or (addr(DriverGetControllersData) = nil) or (addr(DriverSetControllerData) = nil) or (addr(DriverSetCentering) = nil) then
+					  DllHandle:=0;
         end;
       end;
 
