@@ -49,16 +49,19 @@ THMD = HMD;
 
 | Type | Description | Values |
 | ------------- | ------------- | ------------- |
-| X, Y, Z | Position tracking | Between -1.000 and 1.000 |
-| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 |
+| X, Y, Z | Position tracking | 0.000 (in meters) |
+| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 (in degrees) |
 
 If you prefer to use a quaternion, you can get it from Yaw, Pitch, Roll.
 ```c
 double qW, qX, qY, qZ;
-qW = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
-qX = cos(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) - sin(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
-qY = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5);
-qZ = sin(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) - cos(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
+myYaw = yaw * (3.14159265358979323846 / 180); //degrees to radians
+myRoll = roll * (3.14159265358979323846 / 180); //degrees to radians
+myPitch = pitch * (3.14159265358979323846 / 180); //degrees to radians
+qW = cos(myYaw * 0.5) * cos(myRoll * 0.5) * cos(myPitch * 0.5) + sin(myYaw * 0.5) * sin(myRoll * 0.5) * sin(myPitch * 0.5);
+qX = cos(myYaw * 0.5) * sin(myRoll * 0.5) * cos(myPitch * 0.5) - sin(myYaw * 0.5) * cos(myRoll * 0.5) * sin(myPitch * 0.5);
+qY = cos(myYaw * 0.5) * cos(myRoll * 0.5) * sin(myPitch * 0.5) + sin(myYaw * 0.5) * sin(myRoll * 0.5) * cos(myPitch * 0.5);
+qZ = sin(myYaw * 0.5) * cos(myRoll * 0.5) * cos(myPitch * 0.5) - cos(myYaw * 0.5) * sin(myRoll * 0.5) * sin(myPitch * 0.5);
 ```
 
 #### Return value

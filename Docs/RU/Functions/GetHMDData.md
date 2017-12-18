@@ -49,17 +49,19 @@ THMD = HMD;
 
 | Тип | Описание | Значения |
 | ------------- | ------------- | ------------- |
-| X, Y, Z | Отслеживание позиции | От -1.000 до 1.000 |
-| Yaw, Pitch, Roll | Отслеживание вращения | От -180 до 180 |
+| X, Y, Z | Отслеживание позиции | 0.000 (в метрах) |
+| Yaw, Pitch, Roll | Отслеживание вращения | От -180 до 180 (в градусах) |
 
-
-Если вам удобнее использовать кватернион, его можно получить из Yaw, Pitch, Roll.
+Если вы предпочитаете использовать кватернион, вы можете получить его из Yaw, Pitch, Roll.
 ```c
 double qW, qX, qY, qZ;
-qW = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
-qX = cos(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) - sin(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
-qY = cos(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5) + sin(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5);
-qZ = sin(DegToRad(yaw) * 0.5) * cos(DegToRad(roll) * 0.5) * cos(DegToRad(pitch) * 0.5) - cos(DegToRad(yaw) * 0.5) * sin(DegToRad(roll) * 0.5) * sin(DegToRad(pitch) * 0.5);
+myYaw = yaw * (3.14159265358979323846 / 180); //градусы в радианы
+myRoll = roll * (3.14159265358979323846 / 180); //градусы в радианы
+myPitch = pitch * (3.14159265358979323846 / 180); //градусы в радианы
+qW = cos(myYaw * 0.5) * cos(myRoll * 0.5) * cos(myPitch * 0.5) + sin(myYaw * 0.5) * sin(myRoll * 0.5) * sin(myPitch * 0.5);
+qX = cos(myYaw * 0.5) * sin(myRoll * 0.5) * cos(myPitch * 0.5) - sin(myYaw * 0.5) * cos(myRoll * 0.5) * sin(myPitch * 0.5);
+qY = cos(myYaw * 0.5) * cos(myRoll * 0.5) * sin(myPitch * 0.5) + sin(myYaw * 0.5) * sin(myRoll * 0.5) * cos(myPitch * 0.5);
+qZ = sin(myYaw * 0.5) * cos(myRoll * 0.5) * cos(myPitch * 0.5) - cos(myYaw * 0.5) * sin(myRoll * 0.5) * sin(myPitch * 0.5);
 ```
 
 #### Возвращаемое значение

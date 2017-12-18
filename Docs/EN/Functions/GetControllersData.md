@@ -57,8 +57,8 @@ end;
 
 | Type | Description | Values |
 | ------------- | ------------- | ------------- |
-| X, Y, Z | Position tracking | Between -1.000 and 1.000 |
-| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 |
+| X, Y, Z | Position tracking | 0.000 (in meters) |
+| Yaw, Pitch, Roll | Rotation tracking | Between -180 and 180 (in degrees) |
 | Trigger | Analog trigger | Between 0 and 255 |
 | ThumbX | Thumbstick x-axis | Between -32768 and 32767 |
 | ThumbX | Thumbstick y-axis | Between -32768 and 32767 |
@@ -66,7 +66,7 @@ end;
 #### Buttons
 Bitmask of the buttons controllers. A set bit indicates that the corresponding button is pressed. 
 
-| Button | 	Bitmask |
+| Button | Bitmask |
 | ------------- | ------------- |
 | GRIPBTN | 0x0001  |
 | THUMBSTICKBTN | 0x0002 |
