@@ -44,5 +44,5 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 **[Download](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
 
-## Donate
+## Donation
 Bitcoin: `1EvqAg7b2R7EWpKjLvVGp5jCmnJiRZ7pHE`
