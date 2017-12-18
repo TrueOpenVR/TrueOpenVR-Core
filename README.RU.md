@@ -43,3 +43,6 @@ TrueOpenVR - это открытый VR стандарт, сделанный в соответствии с концепцией "Pl
 >Версия для Windows 7, 8.1, 10
 
 **[Загрузить](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
+
+## Поддержка
+Bitcoin: `1EvqAg7b2R7EWpKjLvVGp5jCmnJiRZ7pHE`
