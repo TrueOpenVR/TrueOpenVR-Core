@@ -17,6 +17,7 @@ All functions are imported directly from the "TOVR.dll" library. The library pat
 
 # Parameters TrueOpenVR
 It is desirable that the application has two windows, a main window with a game or program for the VR display and a second small window located on the desktop of a conventional display (not a VR), with the ability to close the application and possibly some more functions.
+
 The main window should be launched in the "Borderless Windowed FullScreen" mode, which means a normal window, without borders, with the size of the display resolution.
 
 ![](https://user-images.githubusercontent.com/9499881/27838382-5d76aadc-60fb-11e7-9a1c-a312f2dddccc.png)
@@ -29,11 +30,14 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 | `Library` | The path to the main 32-bit library with functions. |
 | `Library64` | The path to the main 64-bit library  with functions. |
 | `ScreenIndex`  | VR screen index. For example, 1 is the main display, and 2 is the VR display.  |
-| `Scale` | Scaling an image. If the value contains 1, the image with the long "RenderWidth" and the height of "RenderHeight" is stretched to "UserWidth" and "UserHeight". If the value contains 0, the image is not scaled and displayed in the center of the window. Empty areas of the window have a black background. |
-| `UserWidth` and `UserHeight` | The size image in the window. By default, this is the size of the "ScreenIndex" display, but the user can change it to eliminate blind areas in the VR headset. |
 | `RenderWidth` and `RenderHeight` | Resolution of the render area. For example, a user lacks a productive computer and reduces the resolution of the game to improve performance.  |
-| `FOV` | Field of view. |
 | `Driver` | Current driver name. |
 | `Driver64` | Current 64-bit driver name. |
 | `Drivers` | Path to the folder with drivers. |
+| `IPD` | Interpupillary distance. |
+| `DistortionK1`, `DistortionK2` | Lens distortion correction coefficients for VR headsets. |
+| `DistanceScaleX`, `DistanceScaleY` | Scaling of stereo images vertically and horizontally. Values between 1 and 0, where 1 is 100% of one stereo image. The user can reduce them. It is necessary for change the stereo image for the size of the lens VR headset. |
+| `DistanceBetweenEyes` | Offset the center of the stereo images horizontally. The user can zoom in (-n) or zoom out (n) stereo images from each other. Values between 1 and -1, where 1 is 100% of one stereo image. It is necessary for DIY VR headsets and headsets based on Android smartphone. |
+| `ScreenOffsetX` | Offset the center of the stereo image vertically. The user can move the images to up (-n) or down (n). Values between 0.5 and -0.5, where 0.5 is 50% of one stereo image. It is necessary for DIY VR headsets and headsets based on Android smartphone. |
+| `HeadsetProfiles` | Path to the folder with VR headsets profiles. |
 | `ScreenControl` | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
