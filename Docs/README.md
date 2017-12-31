@@ -10,7 +10,7 @@ All functions are imported directly from the "TOVR.dll" library. The library pat
 
 | Name  | Description |
 | ------------- | ------------- |
-| [GetHMDData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/GetHMDData.md) | Retrieves the rotation and position state of headset. |
+| [GetHMDData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/GetHMDData.md) | Retrieves the rotation and position state of HMD. |
 | [GetControllersData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/GetControllersData.md) | Retrieves the state of the position, rotation, buttons, sticks and triggers of the two controllers. |
 | [SetControllerData](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/SetControllerData.md) | Sends data to a controller. Function is used to activate the feedback (vibration) of a controllers. |
 | [SetCentering](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Functions/SetCentering.md) | Centering the device (reset rotation). |
@@ -34,8 +34,8 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 | `Driver64` | Current 64-bit driver name. |
 | `Drivers` | Path to the folder with drivers. |
 | `IPD` | Interpupillary distance. |
-| `DistortionK1`, `DistortionK2` | Lens distortion correction coefficients for VR headsets. |
-| `DistanceScaleX`, `DistanceScaleY` | Scaling of stereo images vertically and horizontally. Values between 1 and 0, where 1 is 100% of one stereo image. The user can reduce them. It is necessary for change the stereo image for the size of the lens VR headset. |
+| `DistortionK1`, `DistortionK2` | Lens distortion correction coefficients for VR HMD. |
+| `DistanceScaleX`, `DistanceScaleY` | Scaling of stereo images vertically and horizontally. Values between 1 and 0, where 1 is 100% of one stereo image. The user can reduce them. It is necessary for change the stereo image for the size of the lens VR HMD. |
 | `DistanceBetweenEyes` | Offset the center of the stereo images horizontally. The user can zoom in (-n) or zoom out (n) stereo images from each other. Values between 1 and -1, where 1 is 100% of one stereo image. It is necessary for DIY VR headsets and headsets based on Android smartphone. |
 | `ScreenOffsetX` | Offset the center of the stereo image vertically. The user can move the images to up (-n) or down (n). Values between 0.5 and -0.5, where 0.5 is 50% of one stereo image. It is necessary for DIY VR headsets and headsets based on Android smartphone. |
 | `HeadsetProfiles` | Path to the folder with VR headsets profiles. |

@@ -12,14 +12,14 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - For developers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
-- Send your fixes, patches, samples, demos, translations or etc.
+- Send your fixes, improvements, samples, demos, translations or etc.
 
-- Write your proposals or feature requests through "Issue" or email.
+- Write your offers or feature requests through "Issue" or email.
 
 - Become the developer of the standard.
 
 ## Standard features:
-- Truly open and free standard.
+- Really open and free standard.
 
 - Easy to use and configure.
 
@@ -28,14 +28,13 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 - Support for DIY VR devices.
 
 ## Future plans:
-
 - Create a fast VR player, VR photo viewer and VR game demo.
 
-- Support VR headsets (PlayStation VR, Oculus CV1, DK1, DK2, OSVR HDK, HTC Vive and etc).
+- Support VR HMD (PlayStation VR, Oculus CV1, DK1, DK2, OSVR HDK, HTC Vive and etc).
 
 - Trackers support (Aruco Paper, Point tracker and etc) for DIY VR headset.
 
-- Support controllers (Razer Hydra, PS Move, Oculus, Nolo, HTC Vive, Daydream, Gear VR), development and support of a "paper" controller (webcam + Aruco markers + Arduino or webcam + Aruco marker + Daydream).
+- Support controllers (Razer Hydra, PS Move, Oculus Touch, Nolo, HTC Vive, Daydream, Gear VR), development and support of a "paper" controller ("webcam + Aruco markers + Arduino" or "webcam + Aruco markers + Daydream").
 
 - Work samples with lens distortion image profiles.
 
@@ -46,5 +45,5 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 **[Download](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
 
-## Donate
+## Donations
 Bitcoin: `1EvqAg7b2R7EWpKjLvVGp5jCmnJiRZ7pHE`
