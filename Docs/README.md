@@ -36,6 +36,6 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 | `IPD` | Interpupillary distance. |
 | `DistortionK1`, `DistortionK2` | Lens distortion correction coefficients for VR HMD. |
 | `DistanceScaleX`, `DistanceScaleY` | Scaling of stereo images vertically and horizontally. Values in percent from 0 to 1, where 1 is 100% of one stereo image. The user can reduce them. It is necessary for change the stereo image for the size of the lens VR HMD. |
-| `OffsetX`, `OffsetY` | Offset the center of the stereo image vertically and horizontally. The user can move the image up (-n) or down (n), left (-n) or right (n). Values in percent from -1 to 1, default is 0. It is necessary for DIY VR headsets and headsets based on Android smartphone. |
-| `HeadsetProfiles` | Path to the folder with VR HMD profiles. |
+| `OffsetX`, `OffsetY` | Offset the center of the stereo image vertically and horizontally. The user can move the image up (-n) or down (n), left (-n) or right (n). Values in percent from -1 to 1, default is 0. It is necessary for DIY VR HMD and HMD based on Android smartphone. |
+| `HMDProfiles` | Path to the folder with VR HMD profiles. |
 | `ScreenControl` | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
