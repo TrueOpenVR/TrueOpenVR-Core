@@ -37,8 +37,6 @@ type
 
 var
   DriverPath: string;
-  ScreenIndex: integer;
-  ScreenControl: boolean;
   DllHandle: HMODULE;
 
   DriverGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
