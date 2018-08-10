@@ -28,17 +28,22 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 - Support for DIY VR devices.
 
 ## Future plans:
-- Create a fast VR player, VR photo viewer and VR game demo.
 
-- Support VR HMD (PlayStation VR, Oculus CV1, DK1, DK2, OSVR HDK and etc).
+- Add support for controllers to SteamVR driver.
 
-- Trackers support (Aruco Paper marker, Point tracker and etc) for DIY VR headset.
+- Trackers support (Lighten Ping Pong Balls and etc) for DIY VR.
 
-- Support controllers (Razer Hydra, PS Move, Oculus Touch, Daydream, Gear VR), development and support a controller ("Arduino + Lighten Ping Pong Balls + Rotation sensors + webcam" or "Lighten Ping Pong Balls + Daydream controller + webcam").
+- Development and support a controller ("Arduino + Lighten Ping Pong Balls + Rotation sensors + webcam" or "Lighten Ping Pong Balls + Daydream controller + webcam"). Instructions for making.
 
 - Work samples with lens distortion image profiles.
 
 - Work samples with standard on Unreal Engine 4 and Unity.
+
+- Create a fast VR player, VR photo viewer and VR game demo.
+
+- Support VR HMD (PlayStation VR and etc).
+
+- Support controllers (Razer Hydra, PS Move, Daydream). 
 
 ## Download
 >Version for Windows 7, 8.1, 10
