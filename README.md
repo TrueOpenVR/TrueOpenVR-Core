@@ -29,11 +29,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 ## Future plans:
 
-- Add support for controllers to SteamVR driver.
-
-- Trackers support (Lighten Ping Pong Balls and etc) for DIY VR.
-
-- Development and support a controller ("Arduino + Lighten Ping Pong Balls + Rotation sensors + webcam" or "Lighten Ping Pong Balls + Daydream controller + webcam"). Instructions for making.
+- Fully support a controllers ("Arduino + Lighten Ping Pong Balls + Rotation sensors + PS3 eye cam" or "Lighten Ping Pong Balls + Daydream controller + PS3 eye cam"). Instructions for making.
 
 - Work samples with lens distortion image profiles.
 
