@@ -8,7 +8,9 @@
 # True Open VR
 TrueOpenVR - это открытый VR стандарт, сделанный в соответствии с концепцией "Plug and Play" ("включи и играй"). Стандарт имеет простой API, который позволяет получить доступ ко всем VR устройствам. 
 
-- Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples) и [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Docs).
+![](https://user-images.githubusercontent.com/9499881/44171571-92799380-a0eb-11e8-8bda-791cbe427b61.png)
+
+- Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples) и [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md).
 
 - Для разработчиков драйверов VR устройств: [готовые и демострационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
