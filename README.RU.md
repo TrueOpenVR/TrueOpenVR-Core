@@ -27,9 +27,9 @@ TrueOpenVR - это открытый VR стандарт, сделанный в соответствии с концепцией "Pl
 
 - Нет привязки к какой-либо платформе.
 
-- Поддержка [самодельных VR устройств](https://github.com/TrueOpenVR/TrueOpenVR-DIY).
+- Поддержка [самодельных VR устройств](https://github.com/TrueOpenVR/TrueOpenVR-DIY/blob/master/README.RU.md).
 
-- Простое комбинирование [драйверов](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
+- Простое комбинирование [драйверов](https://github.com/TrueOpenVR/TrueOpenVR-Drivers/blob/master/README.RU.md).
 
 ## Планы на будущее:
 
