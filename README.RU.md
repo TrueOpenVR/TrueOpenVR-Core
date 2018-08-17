@@ -1,4 +1,4 @@
-[![EN](https://user-images.githubusercontent.com/9499881/33184537-7be87e86-d096-11e7-89bb-f3286f752bc6.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.md) 
+п»ї[![EN](https://user-images.githubusercontent.com/9499881/33184537-7be87e86-d096-11e7-89bb-f3286f752bc6.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.md) 
 [![RU](https://user-images.githubusercontent.com/9499881/27683795-5b0fbac6-5cd8-11e7-929c-057833e01fb1.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.RU.md) 
 [![CN](https://user-images.githubusercontent.com/9499881/31012373-978ce414-a522-11e7-9936-387b1c530e2f.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.CN.md) 
 [![ES](https://user-images.githubusercontent.com/9499881/31012379-9d8f7764-a522-11e7-8bf4-739077369e8b.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.ES.md) 
@@ -6,44 +6,44 @@
 [![DE](https://user-images.githubusercontent.com/9499881/31012392-ac051326-a522-11e7-9c8c-2186ddf553d0.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.DE.md) 
 [![PT](https://user-images.githubusercontent.com/9499881/31012384-a1d1b544-a522-11e7-8a13-3cb53450d55c.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.PT.md)
 # True Open VR
-TrueOpenVR - это открытый VR стандарт, сделанный в соответствии с концепцией "Plug and Play" ("включи и играй"). Стандарт имеет простой API, который позволяет получить доступ ко всем VR устройствам. 
+TrueOpenVR - СЌС‚Рѕ РѕС‚РєСЂС‹С‚С‹Р№ VR СЃС‚Р°РЅРґР°СЂС‚, СЃРґРµР»Р°РЅРЅС‹Р№ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РєРѕРЅС†РµРїС†РёРµР№ "Plug and Play" ("РІРєР»СЋС‡Рё Рё РёРіСЂР°Р№"). РЎС‚Р°РЅРґР°СЂС‚ РёРјРµРµС‚ РїСЂРѕСЃС‚РѕР№ API, РєРѕС‚РѕСЂС‹Р№ РїРѕР·РІРѕР»СЏРµС‚ РїРѕР»СѓС‡РёС‚СЊ РґРѕСЃС‚СѓРї РєРѕ РІСЃРµРј VR СѓСЃС‚СЂРѕР№СЃС‚РІР°Рј. 
 
 ![](https://user-images.githubusercontent.com/9499881/44172190-7a0a7880-a0ed-11e8-9ecc-55a3ca60236b.png)
 
-- Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples) и [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md).
+- Р”Р»СЏ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РїСЂРёР»РѕР¶РµРЅРёР№ Рё РёРіСЂ: [РґРµРјРѕРЅСЃС‚СЂР°С†РёРѕРЅРЅС‹Рµ РїСЂРёРјРµСЂС‹](https://github.com/TrueOpenVR/TrueOpenVR-Samples) Рё [РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md).
 
-- Для разработчиков драйверов VR устройств: [готовые и демострационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
+- Р”Р»СЏ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РґСЂР°Р№РІРµСЂРѕРІ VR СѓСЃС‚СЂРѕР№СЃС‚РІ: [РіРѕС‚РѕРІС‹Рµ Рё РґРµРјРѕСЃС‚СЂР°С†РёРѕРЅРЅС‹Рµ РґСЂР°Р№РІРµСЂС‹](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
-- Присылайте ваши исправления, улучшения, демонстрационные примеры, переводы и так далее.
+- РџСЂРёСЃС‹Р»Р°Р№С‚Рµ РІР°С€Рё РёСЃРїСЂР°РІР»РµРЅРёСЏ, СѓР»СѓС‡С€РµРЅРёСЏ, РґРµРјРѕРЅСЃС‚СЂР°С†РёРѕРЅРЅС‹Рµ РїСЂРёРјРµСЂС‹, РїРµСЂРµРІРѕРґС‹ Рё С‚Р°Рє РґР°Р»РµРµ.
 
-- Пишите ваши предложения или запросы новой функциональности через "Issue" или почту.
+- РџРёС€РёС‚Рµ РІР°С€Рё РїСЂРµРґР»РѕР¶РµРЅРёСЏ РёР»Рё Р·Р°РїСЂРѕСЃС‹ РЅРѕРІРѕР№ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕСЃС‚Рё С‡РµСЂРµР· "Issue" РёР»Рё РїРѕС‡С‚Сѓ.
 
-- Становитесь разработчиком стандарта.
+- РЎС‚Р°РЅРѕРІРёС‚РµСЃСЊ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРј СЃС‚Р°РЅРґР°СЂС‚Р°.
 
-## Особенности стандарта:
-- По-настоящему открытый и свободный стандарт. 
+## РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё СЃС‚Р°РЅРґР°СЂС‚Р°:
+- РџРѕ-РЅР°СЃС‚РѕСЏС‰РµРјСѓ РѕС‚РєСЂС‹С‚С‹Р№ Рё СЃРІРѕР±РѕРґРЅС‹Р№ СЃС‚Р°РЅРґР°СЂС‚. 
 
-- Прост в использовании и настройке.
+- РџСЂРѕСЃС‚ РІ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРё Рё РЅР°СЃС‚СЂРѕР№РєРµ.
 
-- Нет привязки к какой-либо платформе.
+- РќРµС‚ РїСЂРёРІСЏР·РєРё Рє РєР°РєРѕР№-Р»РёР±Рѕ РїР»Р°С‚С„РѕСЂРјРµ.
 
-- Поддержка [самодельных VR устройств](https://github.com/TrueOpenVR/TrueOpenVR-DIY/blob/master/README.RU.md).
+- РџРѕРґРґРµСЂР¶РєР° [СЃР°РјРѕРґРµР»СЊРЅС‹С… VR СѓСЃС‚СЂРѕР№СЃС‚РІ](https://github.com/TrueOpenVR/TrueOpenVR-DIY/blob/master/README.RU.md).
 
-- Простое комбинирование [драйверов](https://github.com/TrueOpenVR/TrueOpenVR-Drivers/blob/master/README.RU.md).
+- РџСЂРѕСЃС‚РѕРµ РєРѕРјР±РёРЅРёСЂРѕРІР°РЅРёРµ [РґСЂР°Р№РІРµСЂРѕРІ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers/blob/master/README.RU.md).
 
-## Планы на будущее:
+## РџР»Р°РЅС‹ РЅР° Р±СѓРґСѓС‰РµРµ:
 
-- Примеры работы с профилями искажения изображения линз.
+- РџСЂРёРјРµСЂС‹ СЂР°Р±РѕС‚С‹ СЃ РїСЂРѕС„РёР»СЏРјРё РёСЃРєР°Р¶РµРЅРёСЏ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Р»РёРЅР·.
 
-- Примеры работы стандарта на Unreal Engine 4 и Unity.
+- РџСЂРёРјРµСЂС‹ СЂР°Р±РѕС‚С‹ СЃС‚Р°РЅРґР°СЂС‚Р° РЅР° Unreal Engine 4 Рё Unity.
 
-- Создание быстрого VR плеера, VR просмотрщика фотографий и демонстрационной VR игры.
+- РЎРѕР·РґР°РЅРёРµ Р±С‹СЃС‚СЂРѕРіРѕ VR РїР»РµРµСЂР°, VR РїСЂРѕСЃРјРѕС‚СЂС‰РёРєР° С„РѕС‚РѕРіСЂР°С„РёР№ Рё РґРµРјРѕРЅСЃС‚СЂР°С†РёРѕРЅРЅРѕР№ VR РёРіСЂС‹.
 
-- Поддержка VR шлемов (PlayStation VR и так далее).
+- РџРѕРґРґРµСЂР¶РєР° VR С€Р»РµРјРѕРІ (PlayStation VR Рё С‚Р°Рє РґР°Р»РµРµ).
 
-- Поддержка контроллеров (Razer Hydra, PS Move, Daydream).
+- РџРѕРґРґРµСЂР¶РєР° РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ (Razer Hydra, PS Move, Daydream).
 
-## Загрузка
->Версия для Windows 7, 8.1, 10
+## Р—Р°РіСЂСѓР·РєР°
+>Р’РµСЂСЃРёСЏ РґР»СЏ Windows 7, 8.1, 10
 
-**[Загрузить](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
+**[Р—Р°РіСЂСѓР·РёС‚СЊ](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
