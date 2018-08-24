@@ -31,6 +31,10 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - Simple combination of [drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
+## Supported equipment
+- Displays in extended mode (support for direct mode in plans).
+- Trackers: PSMoveService (partial support), FreeTrack, Razor IMU, Arduino, Android.
+
 ## Future plans:
 
 - Work samples with lens distortion image profiles.
