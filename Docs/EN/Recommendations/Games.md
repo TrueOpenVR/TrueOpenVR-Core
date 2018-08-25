@@ -31,3 +31,5 @@ In addition to VR controllers the player should be able to play on the usual gam
 For left-handers, it is necessary to provide for the exchange of the functional buttons of the left and right controller.
 ## Interaction
 Objects for interaction should be located at arm's length. This approach allows you to play in a sitting position.
+
+To take objects in hands can use the "Grip" button.
