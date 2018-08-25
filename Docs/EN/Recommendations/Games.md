@@ -15,13 +15,19 @@ Teleporters should be activated by pressing the "Trigger" button (on the left co
 ![](https://user-images.githubusercontent.com/9499881/44600183-8f685c80-a7e9-11e8-8590-24207ea8aa33.gif)
 
 
-Movement in the game must be jerky. Move the player through the left stick or move in real space. The player himself decides that it is more convenient for him. Someone prefers to play sitting, someone standing, someone has a large room, and someone has a small room and so on.
+Movement in the game must be jerky. Move the player through the left stick or move in real space. The player himself decides that it is more convenient for him. Someone prefers to play sitting someone standing, someone has a large room and someone has a small room and so on.
 
 ![](https://user-images.githubusercontent.com/9499881/44600157-7bbcf600-a7e9-11e8-87c7-b9719d76d6d3.gif)
 
 
-Rotate the camera left and right using the right stick. This approach will avoid discomfort in some players, and some are simply more convenient to rotate in this way. Other players may not use the right stick and rotate as usual.
+Rotate the camera, left and right you can do with the right stick in addition to the usual rotation of the head. This approach will avoid discomfort in some players, and some are simply more convenient to rotate in this way. Other players may not use the right stick and rotate as usual.
 
 ![](https://user-images.githubusercontent.com/9499881/44600210-a9a23a80-a7e9-11e8-9322-a4625e41bb92.gif)
+
+
+In addition to VR controllers the player should be able to play on the usual gamepad.
+
+
+For left-handers, it is necessary to provide for the exchange of the functional buttons of the left and right controller.
 ## Interaction
-It is desirable that most of the items are at a distance of the outstretched arm. This approach allows you to play in a sitting position.
+Objects for interaction should be located at arm's length. This approach allows you to play in a sitting position.
