@@ -51,4 +51,4 @@ Such requirements allow you to get a modern level of graphics and at the same ti
 System requirements are based on [Steam equipment user statistics](https://store.steampowered.com/hwsurvey) and are revised after the release of a new generation of Sony Playstation and Microsoft Xbox consoles.
 
 
-Such requirements are necessary for the growth of VR's popularity.
+Such requirements are necessary for the growth of VR popularity.
