@@ -4,7 +4,7 @@ Recommendations to make applications more convenient to use.
 ## Interface
 It is desirable that the application has two windows, the main window with the program for the VR display and the second small window located on the desktop of the conventional display (not VR), with the ability to close the application and, possibly, some more functions.
 
-![](https://user-images.githubusercontent.com/9499881/44600210-a9a23a80-a7e9-11e8-9322-a4625e41bb92.gif)
+![](https://user-images.githubusercontent.com/9499881/27838382-5d76aadc-60fb-11e7-9a1c-a312f2dddccc.png)
 
 ## Optimization
 The app should work at least 60 frames with a resolution of 1920 to 1080 on the current system requirements TrueOpenVR.
