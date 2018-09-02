@@ -36,7 +36,6 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 - Трекеры: PSMoveService (частичная поддержка), FreeTrack, Razor IMU, Arduino, Android.
 
 ## Планы на будущее:
-
 - Примеры работы с профилями искажения изображения линз.
 
 - Примеры работы стандарта на Unreal Engine 4 и Unity.
@@ -51,3 +50,14 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 >Версия для Windows 7, 8.1, 10
 
 **[Загрузить](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
+
+## Системные требования
+* Процессор Intel Core i3 2120 или эквивалент AMD
+
+* Видеокарта Nvidia GTX 660 2 ГБ или AMD Radeon 7850 2 ГБ 
+
+* HDMI 1.4 или DisplayPort 1.2
+
+* 4 ГБ оперативной памяти
+
+* USB 2.0

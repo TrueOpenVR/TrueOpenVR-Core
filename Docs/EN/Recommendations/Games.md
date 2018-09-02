@@ -32,4 +32,23 @@ For left-handers, it is necessary to provide for the exchange of the functional 
 ## Interaction
 Objects for interaction should be located at arm's length. This approach allows you to play in a sitting position.
 
+
 To take objects in hands can use the "Grip" button.
+
+## Optimization
+The game should work at least 60 frames with a resolution of 1920 to 1080 on the current system requirements TrueOpenVR.
+
+## System requirements
+* Processor Intel Core i3 2120 or equivalent AMD
+
+* Graphics Nvidia GTX 660 2 GB or AMD Radeon 7850 2 GB
+
+* 4 GB of RAM
+
+Such requirements allow you to get a modern level of graphics and at the same time cover the largest number of gaming computers.
+
+
+System requirements are based on [Steam equipment user statistics](https://store.steampowered.com/hwsurvey) and are revised after the release of a new generation of Sony Playstation and Microsoft Xbox consoles.
+
+
+Such requirements are necessary for the growth of VR's popularity.

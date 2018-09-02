@@ -36,7 +36,6 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 - Trackers: PSMoveService (partial support), FreeTrack, Razor IMU, Arduino, Android.
 
 ## Future plans:
-
 - Work samples with lens distortion image profiles.
 
 - Work samples with standard on Unreal Engine 4 and Unity.
@@ -51,3 +50,14 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 >Version for Windows 7, 8.1, 10
 
 **[Download](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
+
+## System requirements
+* Processor Intel Core i3 2120 or equivalent AMD
+
+* Graphics card Nvidia GTX 660 2 GB or AMD Radeon 7850 2 GB
+
+* HDMI 1.4 or DisplayPort 1.2
+
+* 4 GB of RAM
+
+* USB 2.0
