@@ -31,6 +31,9 @@ typedef struct _Controller
 	SHORT	ThumbY;
 } TController, *PController;
 
+#define TOVR_SUCCESS 1
+#define TOVR_FAILURE 0
+
 typedef DWORD(__stdcall *_GetHMDData)(__out THMD *myHMD);
 typedef DWORD(__stdcall *_GetControllersData)(__out TController *myController, __out TController *myController2);
 typedef DWORD(__stdcall *_SetControllerData)(__in int dwIndex, __in WORD MotorSpeed);
@@ -123,7 +126,7 @@ DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD)
 		myHMD->Pitch = 0;
 		myHMD->Roll = 0;
 
-		return 0;
+		return TOVR_FAILURE;
 	}
 }
 
@@ -159,7 +162,7 @@ DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __
 		myController2->ThumbX = 0;
 		myController2->ThumbY = 0;
 
-		return 0;
+		return TOVR_FAILURE;
 	}
 }
 
@@ -169,7 +172,7 @@ DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpe
 		return DriverSetControllerData(dwIndex, MotorSpeed);
 	}
 	else {
-		return 0;
+		return TOVR_FAILURE;
 	}
 }
 
@@ -179,6 +182,6 @@ DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex)
 		return DriverSetCentering(dwIndex);
 	}
 	else {
-		return 0;
+		return TOVR_FAILURE;
 	}
 }

@@ -34,6 +34,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 ## Supported equipment
 - Displays in extended mode (support for direct mode in plans).
 - Trackers: PSMoveService (partial support), FreeTrack, Razor IMU, Arduino, Android.
+- Controllers: Razer Hydra.
 
 ## Future plans:
 - Work samples with lens distortion image profiles.
@@ -44,7 +45,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 
 - Support VR HMD (PlayStation VR and etc).
 
-- Support controllers (Razer Hydra, PS Move, Daydream). 
+- Support controllers (PS Move, Daydream). 
 
 ## Download
 >Version for Windows 7, 8.1, 10

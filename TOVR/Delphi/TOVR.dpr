@@ -35,6 +35,10 @@ type
   Controller = _Controller;
   TController = Controller;
 
+const
+  TOVR_SUCCESS = 1;
+  TOVR_FAILURE = 0;
+
 var
   DriverPath: string;
   DllHandle: HMODULE;
@@ -58,7 +62,7 @@ begin
     myHMD.Pitch:=0;
     myHMD.Roll:=0;
 
-    Result:=0;
+    Result:=TOVR_FAILURE;
   end;
 end;
 
@@ -93,7 +97,7 @@ begin
     myController2.ThumbX:=0;
     myController2.ThumbY:=0;
 
-    Result:=0;
+    Result:=TOVR_FAILURE;
   end;
 end;
 
@@ -102,7 +106,7 @@ begin
   if DllHandle <> 0 then
     Result:=DriverSetControllerData(dwIndex, MotorSpeed)
   else
-    Result:=0;
+    Result:=TOVR_FAILURE;
 end;
 
 function SetCentering(dwIndex: integer): DWORD; stdcall;
@@ -110,7 +114,7 @@ begin
   if DllHandle <> 0 then
     Result:=DriverSetCentering(dwIndex)
   else
-    Result:=0;
+    Result:=TOVR_FAILURE;
 end;
 
 procedure GetRegValues;
