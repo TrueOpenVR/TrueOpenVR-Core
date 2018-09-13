@@ -7,58 +7,58 @@
 [![PT](https://user-images.githubusercontent.com/9499881/31012384-a1d1b544-a522-11e7-8a13-3cb53450d55c.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.PT.md)
 [![JP](https://user-images.githubusercontent.com/9499881/45507863-48e09f00-b7a4-11e8-9750-f5778e187ad6.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.JP.md)
 # True Open VR
-TrueOpenVR ‚Í ƒVƒ“ƒvƒ‹‚ÈAPI‚Å‘S‚Ä‚ÌVRƒfƒoƒCƒX‚É‘Î‰‚·‚éAƒvƒ‰ƒOƒAƒ“ƒhƒvƒŒƒC‚ÌƒRƒ“ƒZƒvƒg‚ÌŒ³ì¬‚³‚ê‚½open VR‹KŠi‚Å‚·B
+TrueOpenVR ã¯ ã‚·ãƒ³ãƒ—ãƒ«ãªAPIã§å…¨ã¦ã®VRãƒ‡ãƒã‚¤ã‚¹ã«å¯¾å¿œã™ã‚‹ã€ãƒ—ãƒ©ã‚°ã‚¢ãƒ³ãƒ‰ãƒ—ãƒ¬ã‚¤ã®ã‚³ãƒ³ã‚»ãƒ—ãƒˆã®å…ƒä½œæˆã•ã‚ŒãŸopen VRè¦æ ¼ã§ã™ã€‚
 
 ![](https://user-images.githubusercontent.com/9499881/44172191-7aa30f00-a0ed-11e8-80a7-0e85ff71b33c.png)
 
-- ƒAƒvƒŠ‹y‚ÑƒQ[ƒ€»ìÒŒü‚¯‘—¿: [ƒTƒ“ƒvƒ‹](https://github.com/TrueOpenVR/TrueOpenVR-Samples) /  [ƒhƒLƒ…ƒƒ“ƒg](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Docs) / [ƒQ[ƒ€»ì‚Ì„§€–Ú](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Games.md) /  [ƒAƒvƒŠ»ì‚Ì„§€–Ú](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Apps.md)
+- ã‚¢ãƒ—ãƒªåŠã³ã‚²ãƒ¼ãƒ è£½ä½œè€…å‘ã‘è³‡æ–™: [ã‚µãƒ³ãƒ—ãƒ«](https://github.com/TrueOpenVR/TrueOpenVR-Samples) /  [ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Docs) / [ã‚²ãƒ¼ãƒ è£½ä½œæ™‚ã®æ¨å¥¨é …ç›®](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Games.md) /  [ã‚¢ãƒ—ãƒªè£½ä½œæ™‚ã®æ¨å¥¨é …ç›®](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Apps.md)
 
-- VRƒfƒoƒCƒX—pƒhƒ‰ƒCƒo»ìÒŒü‚¯‘—¿: [ƒTƒ“ƒvƒ‹‹y‚ÑŠù‘¶ƒhƒ‰ƒCƒo](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
+- VRãƒ‡ãƒã‚¤ã‚¹ç”¨ãƒ‰ãƒ©ã‚¤ãƒè£½ä½œè€…å‘ã‘è³‡æ–™: [ã‚µãƒ³ãƒ—ãƒ«åŠã³æ—¢å­˜ãƒ‰ãƒ©ã‚¤ãƒ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
-- ƒoƒOƒtƒBƒbƒNƒX‚â‰ü—ÇAƒTƒ“ƒvƒ‹‚âƒfƒ‚A–|–ó‚ğ‚¨‘Ò‚¿‚µ‚Ä‚¨‚è‚Ü‚·B
+- ãƒã‚°ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚„æ”¹è‰¯ã€ã‚µãƒ³ãƒ—ãƒ«ã‚„ãƒ‡ãƒ¢ã€ç¿»è¨³ã‚’ãŠå¾…ã¡ã—ã¦ãŠã‚Šã¾ã™ã€‚
 
-- ‚²ˆÓŒ©‹y‚Ñ—v–]‚ÍA"Issue" –”‚Íƒ[ƒ‹ƒAƒhƒŒƒX‚Ü‚Å‚¨Šè‚¢‚µ‚Ü‚·B
+- ã”æ„è¦‹åŠã³è¦æœ›ã¯ã€"Issue" åˆã¯ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã¾ã§ãŠé¡˜ã„ã—ã¾ã™ã€‚
 
-- ŠJ”­Ò‹‚ŞB
+- é–‹ç™ºè€…æ±‚ã‚€ã€‚
 
-## ŠT—v:
-- Š®‘S‚ÉƒI[ƒvƒ“ƒ\[ƒX‚Å–³‚Ì‹¤’Ê‹KŠi
+## æ¦‚è¦:
+- å®Œå…¨ã«ã‚ªãƒ¼ãƒ—ãƒ³ã‚½ãƒ¼ã‚¹ã§ç„¡å„Ÿã®å…±é€šè¦æ ¼
 
-- g—p‚âİ’è‚ª—eˆÕ
+- ä½¿ç”¨ã‚„è¨­å®šãŒå®¹æ˜“
 
-- ƒ}ƒ‹ƒ`ƒvƒ‰ƒbƒgƒtƒH[ƒ€
+- ãƒãƒ«ãƒãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ 
 
-- [DIY VR devices](https://github.com/TrueOpenVR/TrueOpenVR-DIY)‚ğƒTƒ|[ƒg
+- [DIY VR devices](https://github.com/TrueOpenVR/TrueOpenVR-DIY)ã‚’ã‚µãƒãƒ¼ãƒˆ
 
-- [ƒhƒ‰ƒCƒo](https://github.com/TrueOpenVR/TrueOpenVR-Drivers)‚Ì‘g‚İ‚İ‚ª—eˆÕ
+- [ãƒ‰ãƒ©ã‚¤ãƒ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers)ã®çµ„ã¿è¾¼ã¿ãŒå®¹æ˜“
 
-## Œ»İƒTƒ|[ƒg‚³‚ê‚Ä‚¢‚éŠÂ‹«:
-- ƒfƒBƒXƒvƒŒƒC: extended mode («—ˆ“I‚É‚Ídirect mode‚ğƒTƒ|[ƒg)
-- ƒgƒ‰ƒbƒJ[: PSMoveService (ÀŒ±“I), FreeTrack, Razor IMU, Arduino, Android
-- ƒRƒ“ƒgƒ[ƒ‰: Razer Hydra
+## ç¾åœ¨ã‚µãƒãƒ¼ãƒˆã•ã‚Œã¦ã„ã‚‹ç’°å¢ƒ:
+- ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤: extended mode (å°†æ¥çš„ã«ã¯direct modeã‚’ã‚µãƒãƒ¼ãƒˆ)
+- ãƒˆãƒ©ãƒƒã‚«ãƒ¼: PSMoveService (å®Ÿé¨“çš„), FreeTrack, Razor IMU, Arduino, Android
+- ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©: Razer Hydra
 
 ## ToDo:
-- ‹›Šá˜c‚İ•â³ƒvƒƒtƒ@ƒCƒ‹‚ÌÀ‘•ƒTƒ“ƒvƒ‹‚Ìì¬
+- é­šçœ¼æ­ªã¿è£œæ­£ãƒ—ãƒ­ãƒ•ã‚¡ã‚¤ãƒ«ã®å®Ÿè£…ã‚µãƒ³ãƒ—ãƒ«ã®ä½œæˆ
 
-- Unreal Engine 4 ‹y‚Ñ Unity‚Å‚ÌÀ‘•ƒTƒ“ƒvƒ‹‚Ìì¬
+- Unreal Engine 4 åŠã³ Unityã§ã®å®Ÿè£…ã‚µãƒ³ãƒ—ãƒ«ã®ä½œæˆ
 
-- ‚‘¬VRƒvƒŒƒCƒ„[AVR‰æ‘œƒrƒ…ƒAAƒQ[ƒ€ƒfƒ‚‚Ìì¬
+- é«˜é€ŸVRãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã€VRç”»åƒãƒ“ãƒ¥ã‚¢ã€ã‚²ãƒ¼ãƒ ãƒ‡ãƒ¢ã®ä½œæˆ
 
-- VR HMD‚ÌƒTƒ|[ƒg (PlayStation VR“™)
+- VR HMDã®ã‚µãƒãƒ¼ãƒˆ (PlayStation VRç­‰)
 
-- ƒRƒ“ƒgƒ[ƒ‰‚ÌƒTƒ|[ƒg (PS Move, Daydream) 
+- ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã®ã‚µãƒãƒ¼ãƒˆ (PS Move, Daydream) 
 
-## ƒ_ƒEƒ“ƒ[ƒh
->Windows 7, 8.1, 10 Œü‚¯
+## ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
+>Windows 7, 8.1, 10 å‘ã‘
 
-**[ƒ_ƒEƒ“ƒ[ƒh](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
+**[ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰](https://github.com/TrueOpenVR/TrueOpenVR-Core/releases)**
 
-## Å’á“®ìŠÂ‹«
-* Intel Core i3 2120 ‚©“¯«”\‚ÌAMD»ƒvƒƒZƒbƒT
+## æœ€ä½å‹•ä½œç’°å¢ƒ
+* Intel Core i3 2120 ã‹åŒæ€§èƒ½ã®AMDè£½ãƒ—ãƒ­ã‚»ãƒƒã‚µ
 
-* Nvidia GTX 660 2GB –”‚Í AMD Radeon 7850 2GB
+* Nvidia GTX 660 2GB åˆã¯ AMD Radeon 7850 2GB
 
-* HDMI 1.4 –”‚Í DisplayPort 1.2
+* HDMI 1.4 åˆã¯ DisplayPort 1.2
 
 * 4GB RAM
 
