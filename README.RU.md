@@ -13,11 +13,11 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 
 - Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md) и рекомендации по созданию [игр](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Games.md) и [приложений](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Apps.md).
 
-- Для разработчиков драйверов VR устройств: [готовые и демострационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
+- Для разработчиков драйверов VR устройств: [готовые и демонстрационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
 - Присылайте ваши исправления, улучшения, демонстрационные примеры, переводы и так далее.
 
-- Пишите ваши предложения или запросы новой функциональности через "Issue" или почту.
+- Пишите ваши предложения и запросы новой функциональности через "Issue" или почту.
 
 - Становитесь разработчиком стандарта.
 
