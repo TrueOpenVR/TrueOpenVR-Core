@@ -7,7 +7,7 @@
 [![PT](https://user-images.githubusercontent.com/9499881/31012384-a1d1b544-a522-11e7-8a13-3cb53450d55c.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.PT.md)
 [![JP](https://user-images.githubusercontent.com/9499881/45507863-48e09f00-b7a4-11e8-9750-f5778e187ad6.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.JP.md)
 # True Open VR
-TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プラグアンドプレイのコンセプトの元作成されたopen VR規格です。
+TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プラグアンドプレイのコンセプトの元作成された開いた VR規格です。
 
 ![](https://user-images.githubusercontent.com/9499881/44172191-7aa30f00-a0ed-11e8-80a7-0e85ff71b33c.png)
 
@@ -28,7 +28,7 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 
 - マルチプラットフォーム
 
-- [DIY VR devices](https://github.com/TrueOpenVR/TrueOpenVR-DIY)をサポート
+- [DIY VR デバイス](https://github.com/TrueOpenVR/TrueOpenVR-DIY)をサポート
 
 - [ドライバ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers)の組み込みが容易
 
@@ -37,7 +37,7 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 - トラッカー: PSMoveService (実験的), FreeTrack, Razor IMU, Arduino, Android
 - コントローラ: Razer Hydra
 
-## ToDo:
+## 将来の計画:
 - 魚眼歪み補正プロファイルの実装サンプルの作成
 
 - Unreal Engine 4 及び Unityでの実装サンプルの作成
