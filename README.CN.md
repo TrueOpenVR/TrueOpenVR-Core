@@ -56,10 +56,10 @@ TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开�
 ## 系统要求
 * Intel Core i3 2120 或同等的 AMD
 
-* Nvidia GTX 660 2 ГБ 或 AMD Radeon 7850 2 GB
+* Nvidia GTX 660 2 GB 或 AMD Radeon 7850 2 GB
 
 * HDMI 1.4 或 DisplayPort 1.2
 
-* 4 ГБ RAM
+* 4 GB RAM
 
 * USB 2.0

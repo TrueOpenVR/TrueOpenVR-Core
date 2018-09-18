@@ -56,10 +56,10 @@ TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto d
 ## Requisitos del sistema
 * Intel Core i3 2120 o equivalente AMD
 
-* Nvidia GTX 660 2 ГБ o AMD Radeon 7850 2 ГБ 
+* Nvidia GTX 660 2 GB o AMD Radeon 7850 2 GB 
 
 * HDMI 1.4 o DisplayPort 1.2
 
-* 4 ГБ RAM
+* 4 GB RAM
 
 * USB 2.0
