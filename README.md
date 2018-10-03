@@ -5,7 +5,8 @@
 [![JP](https://user-images.githubusercontent.com/9499881/45507863-48e09f00-b7a4-11e8-9750-f5778e187ad6.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.JP.md)
 [![FR](https://user-images.githubusercontent.com/9499881/31012387-a7b4aaac-a522-11e7-8485-36ce58dc2d4a.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.FR.md) 
 [![DE](https://user-images.githubusercontent.com/9499881/31012392-ac051326-a522-11e7-9c8c-2186ddf553d0.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.DE.md) 
-[![PT](https://user-images.githubusercontent.com/9499881/31012384-a1d1b544-a522-11e7-8a13-3cb53450d55c.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.PT.md)# True Open VR
+[![PT](https://user-images.githubusercontent.com/9499881/31012384-a1d1b544-a522-11e7-8a13-3cb53450d55c.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.PT.md)
+# True Open VR
 TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug and Play". The standard has a simple API that allows to access all VR devices.
 
 ![](https://user-images.githubusercontent.com/9499881/44172191-7aa30f00-a0ed-11e8-80a7-0e85ff71b33c.png)
