@@ -63,3 +63,7 @@ TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto d
 * 4 GB RAM
 
 * USB 2.0
+
+## Partners
+
+[Relativty](https://www.relativty.net) - hardware VR de código abierto.

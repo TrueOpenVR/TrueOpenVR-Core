@@ -63,3 +63,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 * 4 GB of RAM
 
 * USB 2.0
+
+## Partners
+
+[Relativty](https://www.relativty.net) - open source VR hardware.

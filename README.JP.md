@@ -63,3 +63,7 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 * 4GB RAM
 
 * USB 2.0
+
+## パートナー
+
+[Relativty](https://www.relativty.net) - オープンソースのVRハードウェア

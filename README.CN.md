@@ -63,3 +63,7 @@ TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开�
 * 4 GB RAM
 
 * USB 2.0
+
+## 伙伴
+
+[Relativty](https://www.relativty.net) - 开源VR硬件.
