@@ -10,7 +10,7 @@
 # True Open VR
 TrueOpenVR - это открытый VR стандарт, сделанный в соответствии с концепцией "Plug and Play" ("включи и играй"). Стандарт имеет простой API, который позволяет получить доступ ко всем VR устройствам. 
 
-![](https://user-images.githubusercontent.com/9499881/44172190-7a0a7880-a0ed-11e8-9ecc-55a3ca60236b.png)
+<img src="https://user-images.githubusercontent.com/9499881/44172190-7a0a7880-a0ed-11e8-9ecc-55a3ca60236b.png" align="right" width="245">
 
 - Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md) и рекомендации по созданию [игр](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Games.md) и [приложений](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Apps.md).
 - Для разработчиков драйверов VR устройств: [готовые и демонстрационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
@@ -34,7 +34,6 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 - Примеры работы с профилями искажения изображения линз.
 - Примеры работы стандарта на Unreal Engine 4 и Unity.
 - Создание быстрого VR плеера, VR просмотрщика фотографий и демонстрационной VR игры.
-- Поддержка различных VR шлемов.
 - Поддержка контроллеров (Daydream).
 
 ## Загрузка

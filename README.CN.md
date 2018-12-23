@@ -10,7 +10,7 @@
 # True Open VR
 TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开启和播放”）的概念制作. 该标准有一个简单的API，允许您访问所有VR设备. 
 
-![](https://user-images.githubusercontent.com/9499881/45685521-953c2e00-bb5a-11e8-9503-be98aa7f2713.png)
+<img src="https://user-images.githubusercontent.com/9499881/45685521-953c2e00-bb5a-11e8-9503-be98aa7f2713.png" align="right" width="245">
 
 - 适用于应用和游戏开发者: [演示](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [文件](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.CN.md) 和建议 [游戏](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/CN/Recommendations/Games.md) 和 [应用](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/CN/Recommendations/Apps.md).
 - 对于VR设备驱动程序的开发人员: [准备和演示驱动程序](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
@@ -34,7 +34,6 @@ TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开�
 - 使用镜头的图像失真轮廓的示例.
 - 标准的例子 Unreal Engine 4 和 Unity.
 - 创建快速VR播放器，VR照片查看器和演示VR游戏.
-- 支持VR头盔.
 - 支持控制器 (Daydream).
 
 ## 装载

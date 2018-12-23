@@ -10,7 +10,7 @@
 # True Open VR
 TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto de "Plug and Play" ("encender y jugar"). El estándar tiene una API simple que le permite acceder a todos los de dispositivos VR. 
 
-![](https://user-images.githubusercontent.com/9499881/45686016-4abbb100-bb5c-11e8-9673-7eb46e2373db.png)
+<img src="https://user-images.githubusercontent.com/9499881/45686016-4abbb100-bb5c-11e8-9673-7eb46e2373db.png" align="right" width="245">
 
 - Para desarrolladores de aplicaciones y juegos: [demos](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [documentación](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.ES.md) y recomendaciones para establecer [juegos](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/ES/Recommendations/Games.md) y [aplicaciones](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/ES/Recommendations/Apps.md).
 - Para desarrolladores de controladores de dispositivo VR: [drivers listos y de demostración](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
@@ -34,7 +34,6 @@ TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto d
 - Ejemplos de trabajar con perfiles de distorsión de imagen de lentes.
 - Ejemplos de trabajo del estándar en Unreal Engine 4 y Unity.
 - Crea un reproductor de realidad virtual rápido, un visor de fotos VR y un juego demo de realidad virtual.
-- Soporte para cascos VR.
 - Soporte para controladores(Daydream).
 
 ## Descargar

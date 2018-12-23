@@ -10,7 +10,7 @@
 # True Open VR
 TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プラグアンドプレイのコンセプトの元作成された開いた VR規格です。
 
-![](https://user-images.githubusercontent.com/9499881/45684255-cd417200-bb56-11e8-9ffb-3451e93e27a8.png)
+<img src="https://user-images.githubusercontent.com/9499881/45684255-cd417200-bb56-11e8-9ffb-3451e93e27a8.png" align="right" width="245">
 
 - アプリ及びゲーム製作者向け資料: [サンプル](https://github.com/TrueOpenVR/TrueOpenVR-Samples) /  [ドキュメント](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.JP.md) / [ゲーム製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Games.md) /  [アプリ製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Apps.md)
 - VRデバイス用ドライバ製作者向け資料: [サンプル及び既存ドライバ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
@@ -34,7 +34,6 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 - 魚眼歪み補正プロファイルの実装サンプルの作成.
 - Unreal Engine 4 及び Unityでの実装サンプルの作成.
 - 高速VRプレイヤー、VR画像ビュア、ゲームデモの作成.
-- VR HMDのサポート
 - コントローラのサポート (Daydream) 
 
 ## ダウンロード
