@@ -8,9 +8,9 @@
 [![IT](https://user-images.githubusercontent.com/9499881/50381884-97f37580-06ab-11e9-8ca8-e8ec7a1b8594.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.IT.md)
 [![CN](https://user-images.githubusercontent.com/9499881/31012373-978ce414-a522-11e7-9936-387b1c530e2f.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.CN.md) 
 # True Open VR
-TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プラグアンドプレイのコンセプトの元作成された開いた VR規格です。
-
 <img src="https://user-images.githubusercontent.com/9499881/45684255-cd417200-bb56-11e8-9ffb-3451e93e27a8.png" align="right" width="245">
+
+TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プラグアンドプレイのコンセプトの元作成された開いた VR規格です。
 
 - アプリ及びゲーム製作者向け資料: [サンプル](https://github.com/TrueOpenVR/TrueOpenVR-Samples) /  [ドキュメント](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.JP.md) / [ゲーム製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Games.md) /  [アプリ製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Apps.md)
 - VRデバイス用ドライバ製作者向け資料: [サンプル及び既存ドライバ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).

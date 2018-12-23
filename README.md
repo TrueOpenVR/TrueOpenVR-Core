@@ -8,9 +8,9 @@
 [![IT](https://user-images.githubusercontent.com/9499881/50381884-97f37580-06ab-11e9-8ca8-e8ec7a1b8594.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.IT.md)
 [![CN](https://user-images.githubusercontent.com/9499881/31012373-978ce414-a522-11e7-9936-387b1c530e2f.png)](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/README.CN.md) 
 # True Open VR
-TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug and Play". The standard has a simple API that allows to access all VR devices.
-
 <img src="https://user-images.githubusercontent.com/9499881/44172191-7aa30f00-a0ed-11e8-80a7-0e85ff71b33c.png" align="right" width="245">
+
+TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug and Play". The standard has a simple API that allows to access all VR devices.
 
 - For developers apps and games: [sample apps](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [docs](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Docs) and recommendations for creating [games](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Games.md) and [apps](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Apps.md).
 - For developers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
