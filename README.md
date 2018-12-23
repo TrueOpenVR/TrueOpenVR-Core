@@ -12,41 +12,29 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 ![](https://user-images.githubusercontent.com/9499881/44172191-7aa30f00-a0ed-11e8-80a7-0e85ff71b33c.png)
 
 - For developers apps and games: [sample apps](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [docs](https://github.com/TrueOpenVR/TrueOpenVR-Core/tree/master/Docs) and recommendations for creating [games](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Games.md) and [apps](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/EN/Recommendations/Apps.md).
-
 - For developers drivers for VR devices: [sample and ready drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
-
 - Send your fixes, improvements, samples, demos, translations or etc.
-
 - Write your offers and feature requests through "Issue" or email.
-
 - Become the developer of the standard.
 
 ## Standard features:
 - Really open and free standard.
-
 - Easy to use and configure.
-
 - No binding to any platform.
-
 - Support for [DIY VR devices](https://github.com/TrueOpenVR/TrueOpenVR-DIY).
-
 - Simple combination of [drivers](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
 
 ## Supported equipment
 - Displays in extended mode (support for direct mode in plans).
-- Trackers: PSMoveService (partial support), FreeTrack, Razor IMU, Arduino, Android.
-- Controllers: Razer Hydra.
+- Trackers: PSMoveService, FreeTrack, Razor IMU, Arduino, Android.
+- Controllers: Razer Hydra, PS Move.
 
 ## Future plans:
 - Work samples with lens distortion image profiles.
-
 - Work samples with standard on Unreal Engine 4 and Unity.
-
 - Create a fast VR player, VR photo viewer and VR game demo.
-
-- Support VR HMD (PlayStation VR and etc).
-
-- Support controllers (PS Move, Daydream). 
+- Support VR HMD.
+- Support controllers (Daydream). 
 
 ## Download
 >Version for Windows 7, 8.1, 10
@@ -63,7 +51,3 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 * 4 GB of RAM
 
 * USB 2.0
-
-## Partners
-
-[Relativty](https://www.relativty.net) - open source VR hardware.

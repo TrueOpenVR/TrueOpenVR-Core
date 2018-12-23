@@ -12,41 +12,29 @@ TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开�
 ![](https://user-images.githubusercontent.com/9499881/45685521-953c2e00-bb5a-11e8-9503-be98aa7f2713.png)
 
 - 适用于应用和游戏开发者: [演示](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [文件](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.CN.md) 和建议 [游戏](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/CN/Recommendations/Games.md) 和 [应用](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/CN/Recommendations/Apps.md).
-
 - 对于VR设备驱动程序的开发人员: [准备和演示驱动程序](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
-
 - 发送您的更正，改进，演示，翻译等.
-
 - 通过以下方式撰写您的建议和新功能请求 "Issue" 或邮件.
-
 - 成为标准的开发者.
 
 ## 标准的特点:
 - 一个真正开放和免费的标准. 
-
 - 易于使用和配置.
-
 - 没有绑定到任何平台.
-
 - 支持 [自制VR设备](https://github.com/TrueOpenVR/TrueOpenVR-DIY/blob/master/README.CN.md).
-
 - 简单组合 [司机](https://github.com/TrueOpenVR/TrueOpenVR-Drivers/blob/master/README.CN.md).
 
 ## 支持的设备
 - 以高级模式显示 (支持计划中的直接输出).
-- 跟踪器: PSMoveService (部分支持), FreeTrack, Razor IMU, Arduino, Android.
-- 控制器: Razer Hydra.
+- 跟踪器: PSMoveService, FreeTrack, Razor IMU, Arduino, Android.
+- 控制器: Razer Hydra, PS Move.
 
 ## 未来的计划:
 - 使用镜头的图像失真轮廓的示例.
-
 - 标准的例子 Unreal Engine 4 和 Unity.
-
 - 创建快速VR播放器，VR照片查看器和演示VR游戏.
-
-- 支持VR头盔 (PlayStation VR 等等).
-
-- 支持控制器 (PS Move, Daydream).
+- 支持VR头盔.
+- 支持控制器 (Daydream).
 
 ## 装载
 >版本 Windows 7, 8.1, 10
@@ -63,7 +51,3 @@ TrueOpenVR - 这是一个开放的VR标准，按照“即插即用”（“开�
 * 4 GB RAM
 
 * USB 2.0
-
-## 伙伴
-
-[Relativty](https://www.relativty.net) - 开源VR硬件.

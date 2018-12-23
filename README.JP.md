@@ -12,41 +12,29 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 ![](https://user-images.githubusercontent.com/9499881/45684255-cd417200-bb56-11e8-9ffb-3451e93e27a8.png)
 
 - アプリ及びゲーム製作者向け資料: [サンプル](https://github.com/TrueOpenVR/TrueOpenVR-Samples) /  [ドキュメント](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.JP.md) / [ゲーム製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Games.md) /  [アプリ製作時の推奨項目](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/JP/Recommendations/Apps.md)
-
 - VRデバイス用ドライバ製作者向け資料: [サンプル及び既存ドライバ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
-
 - バグフィックスや改良、サンプルやデモ、翻訳をお待ちしております。
-
 - ご意見及び要望は、"Issue" 又はメールアドレスまでお願いします。
-
 - 開発者求む。
 
 ## 概要:
 - 完全にオープンソースで無償の共通規格
-
 - 使用や設定が容易
-
 - マルチプラットフォーム
-
 - [DIY VR デバイス](https://github.com/TrueOpenVR/TrueOpenVR-DIY)をサポート
-
 - [ドライバ](https://github.com/TrueOpenVR/TrueOpenVR-Drivers)の組み込みが容易
 
 ## 現在サポートされている環境:
-- ディスプレイ: extended mode (将来的にはdirect modeをサポート)
-- トラッカー: PSMoveService (実験的), FreeTrack, Razor IMU, Arduino, Android
-- コントローラ: Razer Hydra
+- ディスプレイ: extended mode (将来的にはdirect modeをサポート).
+- トラッカー: PSMoveService, FreeTrack, Razor IMU, Arduino, Android.
+- コントローラ: Razer Hydra, PS Move.
 
 ## 将来の計画:
-- 魚眼歪み補正プロファイルの実装サンプルの作成
-
-- Unreal Engine 4 及び Unityでの実装サンプルの作成
-
-- 高速VRプレイヤー、VR画像ビュア、ゲームデモの作成
-
-- VR HMDのサポート (PlayStation VR等)
-
-- コントローラのサポート (PS Move, Daydream) 
+- 魚眼歪み補正プロファイルの実装サンプルの作成.
+- Unreal Engine 4 及び Unityでの実装サンプルの作成.
+- 高速VRプレイヤー、VR画像ビュア、ゲームデモの作成.
+- VR HMDのサポート
+- コントローラのサポート (Daydream) 
 
 ## ダウンロード
 >Windows 7, 8.1, 10 向け
@@ -63,7 +51,3 @@ TrueOpenVR は シンプルなAPIで全てのVRデバイスに対応する、プ
 * 4GB RAM
 
 * USB 2.0
-
-## パートナー
-
-[Relativty](https://www.relativty.net) - オープンソースのVRハードウェア

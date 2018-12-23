@@ -12,41 +12,29 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 ![](https://user-images.githubusercontent.com/9499881/44172190-7a0a7880-a0ed-11e8-9ecc-55a3ca60236b.png)
 
 - Для разработчиков приложений и игр: [демонстрационные примеры](https://github.com/TrueOpenVR/TrueOpenVR-Samples), [документация](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/README.RU.md) и рекомендации по созданию [игр](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Games.md) и [приложений](https://github.com/TrueOpenVR/TrueOpenVR-Core/blob/master/Docs/RU/Recommendations/Apps.md).
-
 - Для разработчиков драйверов VR устройств: [готовые и демонстрационные драйверы](https://github.com/TrueOpenVR/TrueOpenVR-Drivers).
-
 - Присылайте ваши исправления, улучшения, демонстрационные примеры, переводы и так далее.
-
 - Пишите ваши предложения и запросы новой функциональности через "Issue" или почту.
-
 - Становитесь разработчиком стандарта.
 
 ## Особенности стандарта:
 - По-настоящему открытый и свободный стандарт. 
-
 - Прост в использовании и настройке.
-
 - Нет привязки к какой-либо платформе.
-
 - Поддержка [самодельных VR устройств](https://github.com/TrueOpenVR/TrueOpenVR-DIY/blob/master/README.RU.md).
-
 - Простое комбинирование [драйверов](https://github.com/TrueOpenVR/TrueOpenVR-Drivers/blob/master/README.RU.md).
 
 ## Поддерживаемое оборудование
 - Дисплеи в расширенном режиме (поддержка прямого вывода в планах).
-- Трекеры: PSMoveService (частичная поддержка), FreeTrack, Razor IMU, Arduino, Android.
-- Контроллеры: Razer Hydra.
+- Трекеры: PSMoveService, FreeTrack, Razor IMU, Arduino, Android.
+- Контроллеры: Razer Hydra, PS Move.
 
 ## Планы на будущее:
 - Примеры работы с профилями искажения изображения линз.
-
 - Примеры работы стандарта на Unreal Engine 4 и Unity.
-
 - Создание быстрого VR плеера, VR просмотрщика фотографий и демонстрационной VR игры.
-
-- Поддержка VR шлемов (PlayStation VR и так далее).
-
-- Поддержка контроллеров (PS Move, Daydream).
+- Поддержка различных VR шлемов.
+- Поддержка контроллеров (Daydream).
 
 ## Загрузка
 >Версия для Windows 7, 8.1, 10
@@ -63,7 +51,3 @@ TrueOpenVR - это открытый VR стандарт, сделанный в 
 * 4 ГБ оперативной памяти
 
 * USB 2.0
-
-## Партнеры
-
-[Relativty](https://www.relativty.net) - VR устройства для самостоятельной сборки.

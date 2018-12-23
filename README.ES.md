@@ -34,19 +34,15 @@ TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto d
 
 ## Equipo soportado
 - Se muestra en modo avanzado (soporte para salida directa en planes).
-- Rastreadores: PSMoveService (apoyo parcial), FreeTrack, Razor IMU, Arduino, Android.
-- Controladores: Razer Hydra.
+- Rastreadores: PSMoveService, FreeTrack, Razor IMU, Arduino, Android.
+- Controladores: Razer Hydra, PS Move.
 
 ## Planes para el futuro:
 - Ejemplos de trabajar con perfiles de distorsión de imagen de lentes.
-
 - Ejemplos de trabajo del estándar en Unreal Engine 4 y Unity.
-
 - Crea un reproductor de realidad virtual rápido, un visor de fotos VR y un juego demo de realidad virtual.
-
-- Soporte para cascos VR (PlayStation VR, etc).
-
-- Soporte para controladores(PS Move, Daydream).
+- Soporte para cascos VR.
+- Soporte para controladores(Daydream).
 
 ## Descargar
 >Versión para Windows 7, 8.1, 10
@@ -55,15 +51,7 @@ TrueOpenVR - este es un estándar VR abierto, hecho de acuerdo con el concepto d
 
 ## Requisitos del sistema
 * Intel Core i3 2120 o equivalente AMD
-
 * Nvidia GTX 660 2 GB o AMD Radeon 7850 2 GB 
-
 * HDMI 1.4 o DisplayPort 1.2
-
 * 4 GB RAM
-
 * USB 2.0
-
-## Partners
-
-[Relativty](https://www.relativty.net) - hardware VR de código abierto.
