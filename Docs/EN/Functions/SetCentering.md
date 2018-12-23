@@ -19,4 +19,4 @@ function SetCentering(
 dwIndex - Device number, 0 - HMD, 1 and 2 - the first and second controllers.
 
 #### Return value
-If the function succeeded, the return value is 1, otherwise 0.
+If the function succeeded, the return value is 0, otherwise 1.

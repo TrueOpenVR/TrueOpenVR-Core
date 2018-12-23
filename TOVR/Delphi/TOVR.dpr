@@ -1,12 +1,13 @@
-library TOVR;
-
 //============ True Open Virtual Reality ============
 //========== https://github.com/TrueOpenVR ==========
+
+library TOVR;
 
 uses
   SysUtils, Windows, Registry;
 
 type
+  //HMD
   PHMD = ^THMD;
   _HMDData = record
     X: double;
@@ -15,10 +16,11 @@ type
     Yaw: double;
     Pitch: double;
     Roll: double;
-  end;
+end;
   HMD = _HMDData;
   THMD = HMD;
 
+  //Controllers
   PController = ^TController;
   _Controller = record
     X: double;
@@ -28,82 +30,127 @@ type
     Pitch: double;
     Roll: double;
     Buttons: word;
-    Trigger: byte;
-    ThumbX: smallint;
-    ThumbY: smallint;
-  end;
+    Trigger: single;
+    AxisX: single;
+    AxisY: single;
+end;
   Controller = _Controller;
   TController = Controller;
 
 const
-  TOVR_SUCCESS = 1;
-  TOVR_FAILURE = 0;
+  TOVR_SUCCESS = 0;
+  TOVR_FAILURE = 1;
 
 var
   DriverPath: string;
-  DllHandle: HMODULE;
+  DriverDll: HMODULE;
 
-  DriverGetHMDData: function(out myHMD: THMD): DWORD; stdcall;
-  DriverGetControllersData: function(out myController, myController2: TController): DWORD; stdcall;
-  DriverSetControllerData: function (dwIndex: integer; MotorSpeed: word): DWORD; stdcall;
-  DriverSetCentering: function (dwIndex: integer): DWORD; stdcall;
+  DriverGetHMDData: function(out MyHMD: THMD): DWORD; stdcall;
+  DriverGetControllersData: function(out FirstController, SecondController: TController): DWORD; stdcall;
+  DriverSetControllerData: function (dwIndex: integer; MotorSpeed: byte): DWORD; stdcall;
+
+  HMD_YPR: array[0..2] of double = (0, 0, 0);
+  FirstCtrl_YPR: array[0..2] of double = (0, 0, 0);
+  SecondCtrl_YPR: array[0..2] of double = (0, 0, 0);
+
+  HMD_Offset_YPR: array[0..2] of double = (0, 0, 0);
+  FirstCtrl_Offset_YPR: array[0..2] of double = (0, 0, 0);
+  SecondCtrl_Offset_YPR: array[0..2] of double = (0, 0, 0);
 
 {$R *.res}
 
-function GetHMDData(out myHMD: THMD): DWORD; stdcall;
+function OffsetYPR(f, f2: double): double;
 begin
-  if DllHandle <> 0 then
-    Result:=DriverGetHMDData(myHMD)
-  else begin
-    myHMD.X:=0;
-    myHMD.Y:=0;
-    myHMD.Z:=0;
-    myHMD.Yaw:=0;
-    myHMD.Pitch:=0;
-    myHMD.Roll:=0;
+	f:=f - f2;
+	if f < -180 then
+		f:=f + 360
+	else if f > 180 then
+		f:=f - 360;
+	Result:=f;
+end;
+
+function GetHMDData(out MyHMD: THMD): DWORD; stdcall;
+var
+  Status: integer;
+begin
+  if DriverDll <> 0 then begin
+    Status:=DriverGetHMDData(MyHMD);
+		HMD_YPR[0]:=MyHMD.Yaw;
+		HMD_YPR[1]:=MyHMD.Pitch;
+		HMD_YPR[2]:=MyHMD.Roll;
+		MyHMD.Yaw:=OffsetYPR(HMD_YPR[0], HMD_Offset_YPR[0]);
+		MyHMD.Pitch:=OffsetYPR(HMD_YPR[1], HMD_Offset_YPR[1]);
+		MyHMD.Roll:=OffsetYPR(HMD_YPR[2], HMD_Offset_YPR[2]);
+    
+    Result:=Status;
+  end else begin
+    MyHMD.X:=0;
+    MyHMD.Y:=0;
+    MyHMD.Z:=0;
+    MyHMD.Yaw:=0;
+    MyHMD.Pitch:=0;
+    MyHMD.Roll:=0;
 
     Result:=TOVR_FAILURE;
   end;
 end;
 
-function GetControllersData(out myController, myController2: TController): DWORD; stdcall;
+function GetControllersData(out FirstController, SecondController: TController): DWORD; stdcall;
+var
+  Status: integer;
 begin
-  if DllHandle <> 0 then
-    Result:=DriverGetControllersData(myController, myController2)
-  else begin
-    myController.X:=0;
-    myController.Y:=0;
-    myController.Z:=0;
+  if DriverDll <> 0 then begin
+    Status:=DriverGetControllersData(FirstController, SecondController);
 
-    myController.Yaw:=0;
-    myController.Pitch:=0;
-    myController.Roll:=0;
+		FirstController.Yaw:=OffsetYPR(FirstController.Yaw, FirstCtrl_Offset_YPR[0]);
+		FirstController.Pitch:=OffsetYPR(FirstController.Pitch, FirstCtrl_Offset_YPR[1]);
+		FirstController.Roll:=OffsetYPR(FirstController.Roll, FirstCtrl_Offset_YPR[2]);
+		FirstCtrl_YPR[0]:=FirstController.Yaw;
+		FirstCtrl_YPR[1]:=FirstController.Pitch;
+		FirstCtrl_YPR[2]:=FirstController.Roll;
 
-    myController.Buttons:=0;
-    myController.Trigger:=0;
-    myController.ThumbX:=0;
-    myController.ThumbY:=0;
+		SecondController.Yaw:=OffsetYPR(SecondController.Yaw, SecondCtrl_Offset_YPR[0]);
+		SecondController.Pitch:=OffsetYPR(SecondController.Pitch, SecondCtrl_Offset_YPR[1]);
+		SecondController.Roll:=OffsetYPR(SecondController.Roll, SecondCtrl_Offset_YPR[2]);
+		SecondCtrl_YPR[0]:=SecondController.Yaw;
+		SecondCtrl_YPR[1]:=SecondController.Pitch;
+		SecondCtrl_YPR[2]:=SecondController.Roll;
 
-    myController2.X:=0;
-    myController2.Y:=0;
-    myController2.Z:=0;
+    Result:=Status;
+  end else begin
+    FirstController.X:=0;
+    FirstController.Y:=0;
+    FirstController.Z:=0;
 
-    myController2.Yaw:=0;
-    myController2.Pitch:=0;
-    myController2.Roll:=0;
+    FirstController.Yaw:=0;
+    FirstController.Pitch:=0;
+    FirstController.Roll:=0;
 
-    myController2.Buttons:=0;
-    myController2.Trigger:=0;
-    myController2.ThumbX:=0;
-    myController2.ThumbY:=0;
+    FirstController.Buttons:=0;
+    FirstController.Trigger:=0;
+    FirstController.AxisX:=0;
+    FirstController.AxisY:=0;
+
+    SecondController.X:=0;
+    SecondController.Y:=0;
+    SecondController.Z:=0;
+
+    SecondController.Yaw:=0;
+    SecondController.Pitch:=0;
+    SecondController.Roll:=0;
+
+    SecondController.Buttons:=0;
+    SecondController.Trigger:=0;
+    SecondController.AxisX:=0;
+    SecondController.AxisY:=0;
 
     Result:=TOVR_FAILURE;
   end;
 end;
 
-function SetControllerData(dwIndex: integer; MotorSpeed: word): DWORD; stdcall;
+function SetControllerData(dwIndex: integer; MotorSpeed: byte): DWORD; stdcall;
 begin
-  if DllHandle <> 0 then
+  if DriverDll <> 0 then
     Result:=DriverSetControllerData(dwIndex, MotorSpeed)
   else
     Result:=TOVR_FAILURE;
@@ -111,9 +158,29 @@ end;
 
 function SetCentering(dwIndex: integer): DWORD; stdcall;
 begin
-  if DllHandle <> 0 then
-    Result:=DriverSetCentering(dwIndex)
-  else
+  if DriverDll <> 0 then begin
+      case dwIndex of
+        0:
+          begin
+            HMD_Offset_YPR[0]:=HMD_YPR[0];
+            HMD_Offset_YPR[1]:=HMD_YPR[1];
+            HMD_Offset_YPR[2]:=HMD_YPR[2];
+          end;
+        1:
+          begin
+            FirstCtrl_Offset_YPR[0]:=FirstCtrl_YPR[0];
+            FirstCtrl_Offset_YPR[1]:=FirstCtrl_YPR[1];
+            FirstCtrl_Offset_YPR[2]:=FirstCtrl_YPR[2];
+          end;
+        2:
+          begin
+            SecondCtrl_Offset_YPR[0]:=SecondCtrl_YPR[0];
+            SecondCtrl_Offset_YPR[1]:=SecondCtrl_YPR[1];
+            SecondCtrl_Offset_YPR[2]:=SecondCtrl_YPR[2];
+          end;
+      end;
+    Result:=TOVR_SUCCESS;
+  end else
     Result:=TOVR_FAILURE;
 end;
 
@@ -140,20 +207,19 @@ begin
       begin
         GetRegValues;
         if DriverPath <> '' then begin
-          DllHandle:=LoadLibrary(PChar(DriverPath));
-          @DriverGetHMDData:=GetProcAddress(DllHandle, 'GetHMDData');
-          @DriverGetControllersData:=GetProcAddress(DllHandle, 'GetControllersData');
-          @DriverSetControllerData:=GetProcAddress(DllHandle, 'SetControllerData');
-          @DriverSetCentering:=GetProcAddress(DllHandle, 'SetCentering');
+          DriverDll:=LoadLibrary(PChar(DriverPath));
+          @DriverGetHMDData:=GetProcAddress(DriverDll, 'GetHMDData');
+          @DriverGetControllersData:=GetProcAddress(DriverDll, 'GetControllersData');
+          @DriverSetControllerData:=GetProcAddress(DriverDll, 'SetControllerData');
 
-          if (addr(DriverGetHMDData) = nil) or (addr(DriverGetControllersData) = nil) or (addr(DriverSetControllerData) = nil) or (addr(DriverSetCentering) = nil) then
-					  DllHandle:=0;
+          if (addr(DriverGetHMDData) = nil) or (addr(DriverGetControllersData) = nil) or (addr(DriverSetControllerData) = nil) then
+					  DriverDll:=0;
         end;
       end;
 
     DLL_PROCESS_DETACH:
-      if DllHandle <> 0 then
-        FreeLibrary(DllHandle);
+      if DriverDll <> 0 then
+        FreeLibrary(DriverDll);
   end;
 end;
 

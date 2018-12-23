@@ -5,7 +5,7 @@
 ```c
 DWORD SetControllerData(
 	__in INT	dwIndex,
-	__in WORD	MotorSpeed
+	__in unsigned char	MotorSpeed
 );
 ```
 
@@ -13,14 +13,14 @@ Delphi
 ```pascal
 function SetControllerData(
 	dwIndex: integer;
-	MotorSpeed: word
+	MotorSpeed: byte
 ): DWORD;
 ```
 
 #### Параметры
 dwIndex - Номер контроллера (1 или 2).
 
-MotorSpeed - Сила вибрации (от 0 до 65535).
+MotorSpeed - Сила вибрации (от 0 до 255).
 
 #### Возвращаемое значение
-Если контроллеры подключены и функция успешно завершилась, возвращаемое значение равно 1, иначе 0.
+Если контроллеры подключены и функция успешно завершилась, возвращаемое значение равно 0, иначе 1.

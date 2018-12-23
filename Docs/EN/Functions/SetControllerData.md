@@ -5,7 +5,7 @@ Sends data to a controller. Function is used to activate the feedback (vibration
 ```c
 DWORD SetControllerData(
 	__in INT	dwIndex,
-	__in WORD	MotorSpeed
+	__in unsigned char	MotorSpeed
 );
 ```
 
@@ -13,14 +13,14 @@ Delphi
 ```pascal
 function SetControllerData(
 	dwIndex: integer;
-	MotorSpeed: word
+	MotorSpeed: byte
 ): DWORD;
 ```
 
 #### Parameters
 dwIndex - Controller number (1 or 2).
 
-MotorSpeed - Vibration strength (from 0 to 65535).
+MotorSpeed - Vibration strength (from 0 to 255).
 
 #### Return value
-If the controllers are connected and the function succeeded, the return value is 1, otherwise 0.
+If the controllers are connected and the function succeeded, the return value is 0, otherwise 1.

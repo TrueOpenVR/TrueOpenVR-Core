@@ -4,19 +4,19 @@ Retrieves the rotation and position state of HMD.
 С++
 ```c
 DWORD GetHMDData(
-	__out THMD *myHMD
+	__out THMD *MyHMD
 );
 ```
 
 Delphi
 ```pascal
 function GetHMDData(
-	out myHMD: THMD
+	out MyHMD: THMD
 ): DWORD;
 ```
 
 #### Parameters
-myHMD [out] - Pointer to an THMD structure that receives the state of HMD.
+MyHMD [out] - Pointer to an THMD structure that receives the state of HMD.
 
 #### Structure THMD
 C++
@@ -65,4 +65,4 @@ qZ = sin(myYaw * 0.5) * cos(myRoll * 0.5) * cos(myPitch * 0.5) - cos(myYaw * 0.5
 ```
 
 #### Return value
-If the HMD is connected and the function succeeded, the return value is 1, otherwise 0.
+If the HMD is connected and the function succeeded, the return value is 0, otherwise 1.

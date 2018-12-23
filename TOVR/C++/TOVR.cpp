@@ -2,8 +2,7 @@
 //========== https://github.com/TrueOpenVR ==========
 
 #include "stdafx.h"
-#include <atlstr.h> 
-//#include <Windows.h>
+#include <atlstr.h>
 
 #define DLLEXPORT extern "C" __declspec(dllexport)
 
@@ -25,26 +24,33 @@ typedef struct _Controller
 	double	Yaw;
 	double	Pitch;
 	double	Roll;
-	WORD	Buttons;
-	BYTE	Trigger;
-	SHORT	ThumbX;
-	SHORT	ThumbY;
+	unsigned short	Buttons;
+	float	Trigger;
+	float	AxisX;
+	float	AxisY;
 } TController, *PController;
 
-#define TOVR_SUCCESS 1
-#define TOVR_FAILURE 0
+#define TOVR_SUCCESS 0
+#define TOVR_FAILURE 1
 
-typedef DWORD(__stdcall *_GetHMDData)(__out THMD *myHMD);
-typedef DWORD(__stdcall *_GetControllersData)(__out TController *myController, __out TController *myController2);
-typedef DWORD(__stdcall *_SetControllerData)(__in int dwIndex, __in WORD MotorSpeed);
+typedef DWORD(__stdcall *_GetHMDData)(__out THMD *HMD);
+typedef DWORD(__stdcall *_GetControllersData)(__out TController *FirstController, __out TController *SecondController);
+typedef DWORD(__stdcall *_SetControllerData)(__in int dwIndex, __in unsigned char MotorSpeed);
 typedef DWORD(__stdcall *_SetCentering)(__in int dwIndex);
 
 _GetHMDData DriverGetHMDData;
 _GetControllersData DriverGetControllersData;
 _SetControllerData DriverSetControllerData;
-_SetCentering DriverSetCentering;
 
-HMODULE hDll;
+double HMD_YPR[3] = {0, 0, 0};
+double FirstCtrl_YPR[3] = { 0, 0, 0 };
+double SecondCtrl_YPR[3] = { 0, 0, 0 };
+
+double HMD_Offset_YPR[3] = { 0, 0, 0 };
+double FirstCtrl_Offset_YPR[3] = { 0, 0, 0 };
+double SecondCtrl_Offset_YPR[3] = { 0, 0, 0 };
+
+HMODULE DriverDll;
 
 void Init() {
 	CRegKey key;
@@ -76,18 +82,16 @@ void Init() {
 
 		if (driverName != "" && PathFileExists(driversPath + driverName)) {
 
-			hDll = LoadLibrary(driversPath + driverName);
+			DriverDll = LoadLibrary(driversPath + driverName);
 
-			if (hDll != NULL) {
+			if (DriverDll != NULL) {
 
-				DriverGetHMDData = (_GetHMDData)GetProcAddress(hDll, "GetHMDData");
-				DriverGetControllersData = (_GetControllersData)GetProcAddress(hDll, "GetControllersData");
-				DriverSetControllerData = (_SetControllerData)GetProcAddress(hDll, "SetControllerData");
-				DriverSetCentering = (_SetCentering)GetProcAddress(hDll, "SetCentering");
+				DriverGetHMDData = (_GetHMDData)GetProcAddress(DriverDll, "GetHMDData");
+				DriverGetControllersData = (_GetControllersData)GetProcAddress(DriverDll, "GetControllersData");
+				DriverSetControllerData = (_SetControllerData)GetProcAddress(DriverDll, "SetControllerData");
 
-				if (DriverGetHMDData == NULL || DriverGetControllersData == NULL || DriverSetControllerData == NULL || DriverSetCentering == NULL)
-					hDll = NULL;
-
+				if (DriverGetHMDData == NULL || DriverGetControllersData == NULL || DriverSetControllerData == NULL)
+					DriverDll = NULL;
 			}
 		}
 	}
@@ -103,9 +107,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 		}
 
 		case DLL_PROCESS_DETACH: {
-			if (hDll != NULL) {
-				FreeLibrary(hDll);
-				hDll = nullptr;
+			if (DriverDll != NULL) {
+				FreeLibrary(DriverDll);
+				DriverDll = nullptr;
 			}
 			break;
 		}
@@ -113,62 +117,95 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	return true;
 }
 
-DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *myHMD)
+double OffsetYPR(double f, double f2)
 {
-	if (hDll != NULL) {
-		return DriverGetHMDData(myHMD);
+	f -= f2;
+	if (f < -180) {
+		f += 360;
+	}
+	else if (f > 180) {
+		f -= 360;
+	}
+
+	return f;
+}
+
+DLLEXPORT DWORD __stdcall GetHMDData(__out THMD *HMD)
+{
+	if (DriverDll != NULL) {
+		int Status = DriverGetHMDData(HMD);
+		HMD_YPR[0] = HMD->Yaw;
+		HMD_YPR[1] = HMD->Pitch;
+		HMD_YPR[2] = HMD->Roll;
+		HMD->Yaw = OffsetYPR(HMD_YPR[0], HMD_Offset_YPR[0]);
+		HMD->Pitch = OffsetYPR(HMD_YPR[1], HMD_Offset_YPR[1]);
+		HMD->Roll = OffsetYPR(HMD_YPR[2], HMD_Offset_YPR[2]);
+		return Status;
 	}
 	else {
-		myHMD->X = 0;
-		myHMD->Y = 0;
-		myHMD->Z = 0;
-		myHMD->Yaw = 0;
-		myHMD->Pitch = 0;
-		myHMD->Roll = 0;
+		HMD->X = 0;
+		HMD->Y = 0;
+		HMD->Z = 0;
+		HMD->Yaw = 0;
+		HMD->Pitch = 0;
+		HMD->Roll = 0;
 
 		return TOVR_FAILURE;
 	}
 }
 
-DLLEXPORT DWORD __stdcall GetControllersData(__out TController *myController, __out TController *myController2)
+DLLEXPORT DWORD __stdcall GetControllersData(__out TController *FirstController, __out TController *SecondController)
 {
-	if (hDll != NULL) {
-		return DriverGetControllersData(myController, myController2);
+	if (DriverDll != NULL) {
+		int Status = DriverGetControllersData(FirstController, SecondController);
+		FirstController->Yaw = OffsetYPR(FirstController->Yaw, FirstCtrl_Offset_YPR[0]);
+		FirstController->Pitch = OffsetYPR(FirstController->Pitch, FirstCtrl_Offset_YPR[1]);
+		FirstController->Roll = OffsetYPR(FirstController->Roll, FirstCtrl_Offset_YPR[2]);
+		FirstCtrl_YPR[0] = FirstController->Yaw;
+		FirstCtrl_YPR[1] = FirstController->Pitch;
+		FirstCtrl_YPR[2] = FirstController->Roll;
+		SecondController->Yaw = OffsetYPR(SecondController->Yaw, SecondCtrl_Offset_YPR[0]);
+		SecondController->Pitch = OffsetYPR(SecondController->Pitch, SecondCtrl_Offset_YPR[1]);
+		SecondController->Roll = OffsetYPR(SecondController->Roll, SecondCtrl_Offset_YPR[2]);
+		SecondCtrl_YPR[0] = SecondController->Yaw;
+		SecondCtrl_YPR[1] = SecondController->Pitch;
+		SecondCtrl_YPR[2] = SecondController->Roll;
+		return Status;
 	}
 	else {
-		myController->X = 0;
-		myController->Y = 0;
-		myController->Z = 0;
+		FirstController->X = 0;
+		FirstController->Y = 0;
+		FirstController->Z = 0;
 
-		myController->Yaw = 0;
-		myController->Pitch = 0;
-		myController->Roll = 0;
+		FirstController->Yaw = 0;
+		FirstController->Pitch = 0;
+		FirstController->Roll = 0;
 
-		myController->Buttons = 0;
-		myController->Trigger = 0;
-		myController->ThumbX = 0;
-		myController->ThumbY = 0;
+		FirstController->Buttons = 0;
+		FirstController->Trigger = 0;
+		FirstController->AxisX = 0;
+		FirstController->AxisY = 0;
 
-		myController2->X = 0;
-		myController2->Y = 0;
-		myController2->Z = 0;
+		SecondController->X = 0;
+		SecondController->Y = 0;
+		SecondController->Z = 0;
 
-		myController2->Yaw = 0;
-		myController2->Pitch = 0;
-		myController2->Roll = 0;
+		SecondController->Yaw = 0;
+		SecondController->Pitch = 0;
+		SecondController->Roll = 0;
 
-		myController2->Buttons = 0;
-		myController2->Trigger = 0;
-		myController2->ThumbX = 0;
-		myController2->ThumbY = 0;
+		SecondController->Buttons = 0;
+		SecondController->Trigger = 0;
+		SecondController->AxisX = 0;
+		SecondController->AxisY = 0;
 
 		return TOVR_FAILURE;
 	}
 }
 
-DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpeed)
+DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in unsigned char MotorSpeed)
 {
-	if (hDll != NULL) {
+	if (DriverDll != NULL) {
 		return DriverSetControllerData(dwIndex, MotorSpeed);
 	}
 	else {
@@ -178,8 +215,34 @@ DLLEXPORT DWORD __stdcall SetControllerData(__in int dwIndex, __in WORD MotorSpe
 
 DLLEXPORT DWORD __stdcall SetCentering(__in int dwIndex)
 {
-	if (hDll != NULL) {
-		return DriverSetCentering(dwIndex);
+	if (DriverDll != NULL) {
+		switch (dwIndex)
+		{
+			case 0:
+			{
+				HMD_Offset_YPR[0] = HMD_YPR[0];
+				HMD_Offset_YPR[1] = HMD_YPR[1];
+				HMD_Offset_YPR[2] = HMD_YPR[2];
+				break;
+			}
+			case 1:
+			{
+				FirstCtrl_Offset_YPR[0] = FirstCtrl_YPR[0];
+				FirstCtrl_Offset_YPR[1] = FirstCtrl_YPR[1];
+				FirstCtrl_Offset_YPR[2] = FirstCtrl_YPR[2];
+				break;
+			}
+			case 2:
+			{
+				SecondCtrl_Offset_YPR[0] = SecondCtrl_YPR[0];
+				SecondCtrl_Offset_YPR[1] = SecondCtrl_YPR[1];
+				SecondCtrl_Offset_YPR[2] = SecondCtrl_YPR[2];
+				break;
+			}
+			default:
+				break;
+		}
+		return TOVR_SUCCESS;
 	}
 	else {
 		return TOVR_FAILURE;
