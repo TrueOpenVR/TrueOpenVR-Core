@@ -18,6 +18,7 @@ TrueOpenVR is an open VR standard, made in accordance with the concept of "Plug 
 - Write your offers and feature requests through "Issue" or email.
 - Become the developer of the standard.
 
+
 ## Standard features:
 - Really open and free standard.
 - Easy to use and configure.
