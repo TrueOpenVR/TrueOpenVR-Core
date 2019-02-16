@@ -22,14 +22,13 @@ The registry settings are in the branch `HKEY_CURRENT_USER\Software\TrueOpenVR`.
 | ------------- | ------------- |
 | `Library` | The path to the main 32-bit library with functions. |
 | `Library64` | The path to the main 64-bit library  with functions. |
-| `ScreenIndex`  | VR screen index. For example, 1 is the main display, and 2 is the VR display.  |
-| `RenderWidth` and `RenderHeight` | Resolution of the render area. For example, a user lacks a productive computer and reduces the resolution of the game to improve performance.  |
+| `ScreenIndex`  | VR screen index. For example, 1 is the main display, and 2 is the VR display. |
+| `RenderWidth` and `RenderHeight` | Common frame rendering resolution. For example, the user can increase it to increase the quality of the picture or lower it to increase performance. |
 | `Driver` | Current 32-bit driver name. |
 | `Driver64` | Current 64-bit driver name. |
 | `Drivers` | Path to the folder with drivers. |
-| `IPD` | Interpupillary distance. |
+| `IPD` | Software correction of interpupillary distance. |
 | `DistortionK1`, `DistortionK2` | Lens distortion correction coefficients for VR HMD. |
-| `DistanceScaleX`, `DistanceScaleY` | Scaling of stereo images vertically and horizontally. Values in percent from 0 to 1, where 1 is 100% of one stereo image. The user can reduce them. It is necessary for change the stereo image for the size of the lens VR HMD. |
-| `OffsetX`, `OffsetY` | Offset the center of the stereo image vertically and horizontally. The user can move the image up (-n) or down (n), left (-n) or right (n). Values in percent from -1 to 1, default is 0. It is necessary for DIY VR HMD and HMD based on Android smartphone. |
+| `ScaleWidth`, `ScaleHeight` | Scale stereo images vertically and horizontally. Values range from 0 to 100, where 100 is 100% of one stereo image. User can reduce them. It is necessary to change the stereo image to fit the size of a VR HMD lens. |
 | `HMDProfiles` | Path to the folder with VR HMD profiles. |
-| `ScreenControl` | Automatically turn on and off VR display. Enabling the option is 1, the shutdown is 0. |
+| `ScreenControl` | Turn on or turn off the VR display when launching applications. The on of the option - 1, off - 0. Required for displays in extended mode. |
