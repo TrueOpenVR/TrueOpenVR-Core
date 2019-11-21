@@ -1,7 +1,6 @@
 //============ True Open Virtual Reality ============
 //========== https://github.com/TrueOpenVR ==========
 
-#include "stdafx.h"
 #include <atlstr.h>
 
 #define DLLEXPORT extern "C" __declspec(dllexport)
